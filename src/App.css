@@ -40,3 +40,23 @@
 .read-the-docs {
   color: #888;
 }
+
+
+
+.produto-container{
+  display: flex;
+  gap: 15px;
+}
+
+.produto-item{
+  flex:  1;
+  border: 1px solid #f0f0f0;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px black;
+
+}
+
+.produto-item>img{
+  width: 100%;
+}
