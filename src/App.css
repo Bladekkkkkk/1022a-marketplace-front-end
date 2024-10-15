@@ -57,6 +57,11 @@
 
 }
 
-.produto-item>img{
+.produto-item>.container-imagem>{
   width: 100%;
+}
+
+.produto-item{
+  height: 200px;
+  overflow: hidden;
 }
