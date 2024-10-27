@@ -80,17 +80,11 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 12px 2px rgb(195, 195, 195);
   text-align: center;
-}
-.usuario-item {
-  height: 150px;
-  overflow: hidden;
-}
-.usuario-item {
   width: 100%;
+  overflow: hidden;
   height: auto;
   object-fit: cover;
 }
-
 .usuario-item h3 {
   margin: 0.5em 0;
 }
