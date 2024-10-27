@@ -82,7 +82,7 @@
   text-align: center;
 }
 .usuario-item > .container-imagem {
-  height: 150px; /* Ajuste conforme necessário */
+  height: 150px;
   overflow: hidden;
 }
 .usuario-item > .container-imagem > img {
