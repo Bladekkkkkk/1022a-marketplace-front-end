@@ -24,14 +24,14 @@ function App() {
   useEffect(() => {
     setNome("Kauã Luiz dos Santos")
     //Buscar os dados do BackENd
-    fetch("https://one022a-marketplace-18yz.onrender.com/produtos")
+    fetch("http://localhost:8000/produtos")
       .then(resposta => resposta.json())
       .then(dados => setProdutos(dados))
     //Colocar em uma variável
   }, [])
 
   useEffect(() => {
-    fetch("https://one022a-marketplace-18yz.onrender.com/usuarios")
+    fetch("http://localhost:8000/usuarios")
       .then(resposta => resposta.json())
       .then(dados => setUsuarios(dados))
   }, [])
