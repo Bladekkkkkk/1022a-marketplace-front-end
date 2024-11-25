@@ -1,5 +1,6 @@
 import {  ChangeEvent, FormEvent, useState } from "react"
 import { useNavigate } from 'react-router-dom';
+import './CadastroProduto.css'
 function CadastroProduto(){
     const navigate = useNavigate()
     const [id,setId] = useState("")
@@ -10,7 +11,7 @@ function CadastroProduto(){
     async function handleForm(event:FormEvent){
         event.preventDefault()
         try{
-            const resposta = await fetch("http://localhost:8000/produto",{
+            const resposta = await fetch("http://localhost:8000/produtos",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
