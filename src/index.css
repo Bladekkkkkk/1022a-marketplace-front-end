@@ -1,3 +1,7 @@
+
+
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -13,6 +17,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -23,12 +28,11 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  margin: 0; /* Remove margens do body */
+  padding: 0; /* Remove padding do body */
+  /* outros estilos... */
 }
+
 
 h1 {
   font-size: 3.2em;
@@ -63,6 +67,5 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
-  }
+    background-color: #f9f9f9;}
 }

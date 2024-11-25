@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+// Tipo para produtos
 type ProdutoType = {
-    id:number,
-    nome:string,
-    preco:string,
-    descricao:string,
-    imagem:string
+  id: number,
+  nome: string,
+  preco: string,
+  descricao: string,
+  imagem: string
 }
-// Tipo para Usuario
+
+// Tipo para usuários
 type UsuarioType = {
   id: number,
   name: string,
@@ -17,59 +19,77 @@ type UsuarioType = {
 }
 
 function App() {
-  const [nome, setNome] = useState("")
-  const [produtos, setProdutos] = useState<ProdutoType []>([])
+  const [produtos, setProdutos] = useState<ProdutoType[]>([])
   const [usuarios, setUsuarios] = useState<UsuarioType[]>([])
-  //useEffects(O que fazer, quando Fazer) []=> Hora do carregamento da página
+
+  // useEffect para carregar produtos e usuários
   useEffect(() => {
-    setNome("Kauã Luiz dos Santos")
-    //Buscar os dados do BackENd
+    // Buscar os produtos
     fetch("http://localhost:8000/produtos")
       .then(resposta => resposta.json())
       .then(dados => setProdutos(dados))
-    //Colocar em uma variável
-  }, [])
 
-  useEffect(() => {
-    fetch("http://localhost:8000/usuarios")
+    // Buscar os usuários
+    fetch("https://one022a-marketplace-e90o.onrender.com/usuarios")
       .then(resposta => resposta.json())
       .then(dados => setUsuarios(dados))
   }, [])
 
-return (
+  return (
     <>
-      <h1>{nome}</h1>
-      
-      {/* Seção de Produtos */}
-      <h2>Produtos</h2>
+
+
+      <header className="site-header">
+
+
+        <nav className="navigation">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+
+        <div className="header-actions">
+          <button className="login-button">Login</button>
+        </div>
+      </header>
+      {/* Listagem de Produtos */}
       <div className="produtos-container">
-        {produtos.map(produto => {
-          return (
-            <div key={produto.id} className="produto-item">
-              <h3>{produto.nome}</h3>
-              <div className='container-imagem'>
-                <img src={produto.imagem} alt="Imagem do produto" />
+        <h1 className='titulo-produto'>Produtos</h1>
+        <div className="produtos-list">
+          {
+            produtos.map(produto => (
+              <div key={produto.id} className="produto-item">
+                <h3 className="produto-nome">{produto.nome}</h3> {/* Use h3 para o nome do produto */}
+                <div className='container-imagem'>
+                  <img src={produto.imagem} alt="Imagem do produto" />
+                </div>
+                <p className="produto-preco">{produto.preco}</p>
+                <p className="produto-descricao">{produto.descricao}</p>
+                <button className="botao-comprar">Comprar</button>
               </div>
-              <p><strong>Preço:</strong> {produto.preco}</p>
-              <p><strong>Descrição:</strong> {produto.descricao}</p>
-            </div>
-          )
-        })}
+            ))
+          }
+        </div>
       </div>
 
-      {/* Seção de Usuários */}
-      <h2>Usuários</h2>
+      {/* Listagem de Usuários */}
       <div className="usuarios-container">
-        {usuarios.map(usuario => {
-          return (
-            <div key={usuario.id} className="usuario-item">
-              <h3>{usuario.name}</h3>
-              <p><strong>Email:</strong> {usuario.email}</p>
-              <p><strong>Data de Criação:</strong> {new Date(usuario.created_at).toLocaleString()}</p>
-              <p><strong>Última Atualização:</strong> {new Date(usuario.updated_at).toLocaleString()}</p>
-            </div>
-          )
-        })}
+        <h1 className='titulo-usuario'>Usuários</h1>
+        <div className="usuarios-list"> {/* Adicionando wrapper */}
+          {
+            usuarios.map(usuario => (
+              <div key={usuario.id} className="usuario-item">
+                <h1 className="usuario-nome">{usuario.name}</h1>
+                <p>Email: {usuario.email}</p>
+                <p>Criado em: {new Date(usuario.created_at).toLocaleDateString()}</p>
+                <p>Atualizado em: {new Date(usuario.updated_at).toLocaleDateString()}</p>
+              </div>
+            ))
+          }
+        </div> {/* Fechando a div aqui */}
       </div>
     </>
   )
