@@ -7,28 +7,35 @@ function CadastroProduto(){
     const [descricao,setDescricao] = useState("")
     const [preco,setPreco] = useState("")
     const [imagem,setImagem] = useState("")
-    function handleForm(event:FormEvent){
+    async function handleForm(event:FormEvent){
         event.preventDefault()
-        fetch("http://localhost:8000/produtos",{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify({
-                id:id,
-                nome:nome,
-                descricao:descricao,
-                preco:preco,
-                imagem:imagem
+        try{
+            const resposta = await fetch("http://localhost:8000/produto",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({
+                    id:id,
+                    nome:nome,
+                    descricao:descricao,
+                    preco:preco,
+                    imagem:imagem
+                })
             })
-        })
-        .then(()=>{
-            alert("Produto Cadastro com Sucesso")
-            navigate("/")
-        })
-        .catch(()=>{
-            console.log("Erro ao cadastrar produtos")
-        })
+            if(resposta.status!=500){
+                alert("Produto Cadastro com Sucesso")
+                navigate("/")
+            }
+            else{
+                const mensagem = await resposta.text()
+                alert("Erro ao Cadastrar Produto - Error: " + mensagem)
+            }
+        }
+        catch(e){
+            alert("Servidor não está respondendo.")
+        }
+        
     }
     function handleId(event:ChangeEvent<HTMLInputElement>){
         setId(event.target.value)

@@ -30,7 +30,7 @@ function App() {
       .then(dados => setProdutos(dados))
 
     // Buscar os usuários
-    fetch("https://one022a-marketplace-e90o.onrender.com/usuarios")
+    fetch("http://localhost:8000/usuarios")
       .then(resposta => resposta.json())
       .then(dados => setUsuarios(dados))
   }, [])
