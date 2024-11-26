@@ -25,12 +25,12 @@ function App() {
   // useEffect para carregar produtos e usuários
   useEffect(() => {
     // Buscar os produtos
-    fetch("http://localhost:8000/produtos")
+    fetch("https://one022a-marketplace-18yz.onrender.com/produtos")
       .then(resposta => resposta.json())
       .then(dados => setProdutos(dados))
 
     // Buscar os usuários
-    fetch("http://localhost:8000/usuarios")
+    fetch("https://one022a-marketplace-18yz.onrender.com/usuarios")
       .then(resposta => resposta.json())
       .then(dados => setUsuarios(dados))
   }, [])
