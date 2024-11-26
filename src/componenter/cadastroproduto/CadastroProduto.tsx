@@ -78,19 +78,19 @@ function CadastroProduto(){
                     <input placeholder="Nome" type="text" name="nome" id="nome" onChange={handleNome} />
                 </div>
                 <div>
-                    <input placeholder="Descrição" type="text" name="descricao" id="descricao" onChange={handleMarca} />
+                    <input placeholder="Marca" type="text" name="marca" id="marca" onChange={handleMarca} />
                 </div>
                 <div>
-                    <input placeholder="Preço" type="text" name="preco" id="preco" onChange={handleTamanhotela} />
+                    <input placeholder="Tamanho" type="tamanhotela" name="tamanhotela" id="tamanhotela" onChange={handleTamanhotela} />
                 </div>
                 <div>
-                    <input placeholder="Preço" type="text" name="preco" id="preco" onChange={handleResolucaotela} />
+                    <input placeholder="Resolução" type="resolucaotela" name="resolucaotela" id="resolucaotela" onChange={handleResolucaotela} />
                 </div>
                 <div>
-                    <input placeholder="Preço" type="text" name="preco" id="preco" onChange={handleProporcaotela} />
+                    <input placeholder="Proporção" type="proporcaotela" name="proporcaotela" id="proporcaotela" onChange={handleProporcaotela} />
                 </div>
                 <div>
-                    <input placeholder="Preço" type="text" name="preco" id="preco" onChange={handleFrequenciatela} />
+                    <input placeholder="Frequência" type="frequenciatela" name="frequenciatela" id="frequenciatela" onChange={handleFrequenciatela} />
                 </div>
                 <div>
                     <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" onChange={handleImagem} />
