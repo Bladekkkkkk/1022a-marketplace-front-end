@@ -6,9 +6,9 @@ type ProdutoType = {
   nome: string,
   marca: string,
   tamanhotela: string,
-  resolucaotela:string,
-  proporcaotela:string,
-  frequenciatela:string,
+  resolucaotela: string,
+  proporcaotela: string,
+  frequenciatela: string,
   imagem: string
 }
 
@@ -50,8 +50,8 @@ function App() {
             <li><a href="#home">Home</a></li>
             <li><a href="http://localhost:5173/cadastro-produto?id=&nome=&descricao=&preco=&imagem=">Cadastro Produtos</a></li>
             <li><a href="#produtos">Produtos</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
           </ul>
         </nav>
 
@@ -82,7 +82,7 @@ function App() {
         </div>
       </div>
 
-      
+
 
       {/* Listagem de Usuários */}
       <div className="usuarios-container">
