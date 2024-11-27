@@ -265,3 +265,60 @@
 .produto-item>.container-imagem>img{
   width: 100%;
 }
+
+/* Geral para o formulário */
+form {
+  max-width: 400px; /* Largura máxima */
+  margin: 50px auto; /* Centralizar na página */
+  padding: 20px; /* Espaço interno */
+  background-color: #f9f9f9; /* Fundo do formulário */
+  border: 1px solid #ddd; /* Borda sutil */
+  border-radius: 8px; /* Cantos arredondados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  font-family: Arial, sans-serif; /* Fonte */
+}
+
+/* Estilo do título */
+h1 {
+  text-align: center; /* Centralizar o texto */
+  color: #007bff; /* Azul agradável */
+  margin-bottom: 20px; /* Espaço abaixo */
+}
+
+/* Espaçamento entre os campos */
+form > div {
+  margin-bottom: 15px; /* Espaço entre os inputs */
+}
+
+/* Estilo dos inputs */
+input {
+  width: calc(100% - 20px); /* Preencher largura com margem */
+  padding: 10px; /* Espaço interno */
+  font-size: 1rem; /* Tamanho da fonte */
+  border: 1px solid #ccc; /* Borda cinza */
+  border-radius: 4px; /* Bordas arredondadas */
+}
+
+/* Foco nos inputs */
+input:focus {
+  outline: none;
+  border-color: #007bff; /* Cor da borda no foco */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra no foco */
+}
+
+/* Botão de envio */
+input[type="submit"] {
+  background-color: #007bff; /* Cor do fundo */
+  color: white; /* Cor do texto */
+  border: none; /* Sem borda */
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer; /* Cursor de mão */
+  font-size: 1rem;
+  transition: background-color 0.3s; /* Transição suave */
+}
+
+/* Hover no botão */
+input[type="submit"]:hover {
+  background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+}

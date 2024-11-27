@@ -4,8 +4,11 @@ import './App.css'
 type ProdutoType = {
   id: number,
   nome: string,
-  preco: string,
-  descricao: string,
+  marca: string,
+  tamanhotela: string,
+  resolucaotela:string,
+  proporcaotela:string,
+  frequenciatela:string,
   imagem: string
 }
 
@@ -67,14 +70,19 @@ function App() {
                 <div className='container-imagem'>
                   <img src={produto.imagem} alt="Imagem do produto" />
                 </div>
-                <p className="produto-preco">{produto.preco}</p>
-                <p className="produto-descricao">{produto.descricao}</p>
+                <p className="produto-marca">{produto.marca}</p>
+                <p className="produto-tamanhotela">{produto.tamanhotela}</p>
+                <p className="produto-resolucaotela">{produto.resolucaotela}</p>
+                <p className="produto-proporcaotela">{produto.proporcaotela}</p>
+                <p className="produto-frequenciatela">{produto.frequenciatela}</p>
                 <button className="botao-comprar">Comprar</button>
               </div>
             ))
           }
         </div>
       </div>
+
+      
 
       {/* Listagem de Usuários */}
       <div className="usuarios-container">
