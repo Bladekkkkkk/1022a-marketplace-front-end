@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from "react"
+                                                                                                                                                                                        import { ChangeEvent, FormEvent, useState } from "react"
 import { useNavigate } from 'react-router-dom';
 function CadastroUsuario() {
     const navigate = useNavigate()
@@ -69,13 +69,33 @@ function CadastroUsuario() {
     }
     return (
         <>
+               <header className="site-header">
+        <div className="logo">
+          <img src="logo.png" alt="Logo" />
+        </div>
+
+        <div className="search-bar">
+          <input type="text" placeholder="Busque aqui" />
+          <button className="search-button">➤</button>
+        </div>
+
+        <div className="header-actions">
+          <button
+            className="login-button"
+            onClick={() => window.location.href = "cadastro-usuario"}>
+            Entrar ou Cadastrar-se
+          </button>
+          
+          <div className="icons">
+            <a href="#" className="icon">🔍</a>
+            <a href="#" className="icon">🛒</a>
+            <a href="#" className="icon">❤️</a>
+          </div>
+        </div>
+      </header>
 
 
-
-            
-
-
-            <h1>Meu Componente de Cadastro de Usuários</h1>
+            <h1>Cadastro de Usuários</h1>
             <form onSubmit={handleForm}>
                 <div>
                     <input placeholder="Id" type="text" name="id" id="id" onChange={handleId} />
@@ -84,22 +104,22 @@ function CadastroUsuario() {
                     <input placeholder="Nome" type="text" name="nome" id="nome" onChange={handleNome} />
                 </div>
                 <div>
-                    <input placeholder="email" type="text" name="email" id="email" onChange={handleemail} />
+                    <input placeholder="Email" type="text" name="email" id="email" onChange={handleemail} />
                 </div>
                 <div>
-                    <input placeholder="Tamanho" type="senha" name="senha" id="senha" onChange={handlesenha} />
+                    <input placeholder="Senha" type="senha" name="senha" id="senha" onChange={handlesenha} />
                 </div>
                 <div>
-                    <input placeholder="Resolução" type="confirmarsenha" name="confirmarsenha" id="confirmarsenha" onChange={handleconfirmarsenha} />
+                    <input placeholder="Confimar Senha" type="confirmarsenha" name="confirmarsenha" id="confirmarsenha" onChange={handleconfirmarsenha} />
                 </div>
                 <div>
-                    <input placeholder="Proporção" type="dataNascimento" name="dataNascimento" id="dataNascimento" onChange={handledataNascimento} />
+                    <input placeholder="Data de Nascimento" type="dataNascimento" name="dataNascimento" id="dataNascimento" onChange={handledataNascimento} />
                 </div>
                 <div>
-                    <input placeholder="Frequência" type="telefone" name="telefone" id="telefone" onChange={handletelefone} />
+                    <input placeholder="Telefone (XX) X XXXX-XXXX" type="telefone" name="telefone" id="telefone" onChange={handletelefone} />
                 </div>
                 <div>
-                    <input placeholder="URL endereco" type="text" name="endereco" id="endereco" onChange={handleendereco} />
+                    <input placeholder="Endereço" type="text" name="endereco" id="endereco" onChange={handleendereco} />
                 </div>
                 <input type="submit" value="Cadastrar" />
             </form>

@@ -8,8 +8,8 @@ type UsuarioType = {
   email: string,
   senha: string,
   confirmarsenha: string, 
-  datanascimento: number,
-  telefone: number,
+  datanascimento: string,
+  telefone: string,
   endereco: string
 }
 

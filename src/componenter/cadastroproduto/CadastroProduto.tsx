@@ -72,25 +72,31 @@ function CadastroProduto() {
 
 
             <header className="site-header">
+                <div className="logo">
+                    <img src="logo.png" alt="Logo" />
+                </div>
 
-
-                <nav className="navigation">
-                    <ul>
-                        <li><a href="http://localhost:5173/">Home</a></li>
-                        <li><a href="http://localhost:5173/cadastro-produto?id=&nome=&descricao=&preco=&imagem=">Cadastro Produtos</a></li>
-                        <li><a href="#produtos">Produtos</a></li>
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
-                    </ul>
-                </nav>
+                <div className="search-bar">
+                    <input type="text" placeholder="Busque aqui" />
+                    <button className="search-button">➤</button>
+                </div>
 
                 <div className="header-actions">
-                    <button className="login-button">Login</button>
+                    <button
+                        className="login-button"
+                        onClick={() => window.location.href = "cadastro-usuario"}>
+                        Entrar ou Cadastrar-se
+                    </button>
+
+                    <div className="icons">
+                        <a href="#" className="icon">🔍</a>
+                        <a href="#" className="icon">🛒</a>
+                        <a href="#" className="icon">❤️</a>
+                    </div>
                 </div>
             </header>
 
-
-            <h1>Meu Componente de Cadastro de Produtos</h1>
+            <h1>Cadastro de Produtos</h1>
             <form onSubmit={handleForm}>
                 <div>
                     <input placeholder="Id" type="text" name="id" id="id" onChange={handleId} />

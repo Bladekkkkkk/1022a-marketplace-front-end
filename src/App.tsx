@@ -17,7 +17,7 @@ type ProdutoType = {
 
 function App() {
   const [produtos, setProdutos] = useState<ProdutoType[]>([])
-  
+
   // useEffect para carregar produtos e usuários
   useEffect(() => {
     // Buscar os produtos
@@ -32,27 +32,32 @@ function App() {
     <>
 
 
-<header className="site-header">
-  <div className="logo">
-    <img src="logo.png" alt="Logo" />
-  </div>
+      <header className="site-header">
+        <div className="logo">
+          <img src="logo.png" alt="Logo" />
+        </div>
 
-  <div className="search-bar">
-    <input type="text" placeholder="Busque aqui" />
-    <button className="search-button">➤</button>
-  </div>
+        <div className="search-bar">
+          <input type="text" placeholder="Busque aqui" />
+          <button className="search-button">➤</button>
+        </div>
 
-  <div className="header-actions">
-    <button className="login-button">Entrar ou Cadastrar-se</button>
-    <div className="icons">
-      <a href="#" className="icon">🔍</a>
-      <a href="#" className="icon">🛒</a>
-      <a href="#" className="icon">❤️</a>
-    </div>
-  </div>
-</header>
+        <div className="header-actions">
+          <button
+            className="login-button"
+            onClick={() => window.location.href = "cadastro-usuario"}>
+            Entrar ou Cadastrar-se
+          </button>
+          
+          <div className="icons">
+            <a href="#" className="icon">🔍</a>
+            <a href="#" className="icon">🛒</a>
+            <a href="#" className="icon">❤️</a>
+          </div>
+        </div>
+      </header>
 
-      
+
       {/* Listagem de Produtos */}
       <div className="produtos-container">
         <h1 className='titulo-produto'>Produtos</h1>
@@ -78,7 +83,7 @@ function App() {
 
 
 
-      
+
     </>
   )
 }
