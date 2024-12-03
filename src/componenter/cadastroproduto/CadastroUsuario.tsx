@@ -32,8 +32,7 @@ function CadastroUsuario() {
             if (resposta.status != 500) {
                 alert("Usuário Cadastrado com Sucesso")
                 navigate("/")
-            }
-            else {
+            }else {
                 const mensagem = await resposta.text()
                 alert("Erro ao Cadastrar Produto - Error: " + mensagem)
             }

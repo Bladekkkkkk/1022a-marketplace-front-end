@@ -9,7 +9,7 @@ type UsuarioType = {
   senha: string,
   confirmarsenha: string, 
   datanascimento: string,
-  telefone: string,
+  telefone: number,
   endereco: string
 }
 
