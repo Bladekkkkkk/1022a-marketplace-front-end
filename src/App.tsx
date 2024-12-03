@@ -32,7 +32,7 @@ function App() {
     <>
 
 
-      <header className="site-header">
+<header className="site-header">
         <div className="logo">
           <img src="logo.png" alt="Logo" />
         </div>
@@ -43,6 +43,21 @@ function App() {
         </div>
 
         <div className="header-actions">
+        <button
+            className="produto-button"
+            onClick={() => window.location.href = "produtos"}>
+            Produtos
+          </button>
+        <button
+            className="usuario-button"
+            onClick={() => window.location.href = "usuarios"}>
+            Usuários
+          </button>
+        <button
+            className="cadastroproduto-button"
+            onClick={() => window.location.href = "cadastro-produto"}>
+            Cadastrar Produtos
+          </button>
           <button
             className="login-button"
             onClick={() => window.location.href = "cadastro-usuario"}>

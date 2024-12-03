@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './App2.css'
+import './App.css'
 
 // Tipo para usuários
 type UsuarioType = {
@@ -28,25 +28,44 @@ function Appi() {
     <>
 
 <header className="site-header">
-  <div className="logo">
-    <img src="logo.png" alt="Logo" />
-  </div>
- 
+        <div className="logo">
+          <img src="logo.png" alt="Logo" />
+        </div>
 
-  <div className="search-bar">
-    <input type="text" placeholder="Busque aqui" />
-    <button className="search-button">➤</button>
-  </div>
+        <div className="search-bar">
+          <input type="text" placeholder="Busque aqui" />
+          <button className="search-button">➤</button>
+        </div>
 
-  <div className="header-actions">
-    <button className="login-button">Entrar ou Cadastrar-se</button>
-    <div className="icons">
-      <a href="#" className="icon">🔍</a>
-      <a href="#" className="icon">🛒</a>
-      <a href="#" className="icon">❤️</a>
-    </div>
-  </div>
-</header>
+        <div className="header-actions">
+        <button
+            className="produto-button"
+            onClick={() => window.location.href = "produtos"}>
+            Produtos
+          </button>
+        <button
+            className="usuario-button"
+            onClick={() => window.location.href = "usuarios"}>
+            Usuários
+          </button>
+        <button
+            className="cadastroproduto-button"
+            onClick={() => window.location.href = "cadastro-produto"}>
+            Cadastrar Produtos
+          </button>
+          <button
+            className="login-button"
+            onClick={() => window.location.href = "cadastro-usuario"}>
+            Entrar ou Cadastrar-se
+          </button>
+          
+          <div className="icons">
+            <a href="#" className="icon">🔍</a>
+            <a href="#" className="icon">🛒</a>
+            <a href="#" className="icon">❤️</a>
+          </div>
+        </div>
+      </header>
 
       {/* Listagem de Usuários */}
       <div className="usuarios-container">
