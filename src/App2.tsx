@@ -31,6 +31,7 @@ function Appi() {
   <div className="logo">
     <img src="logo.png" alt="Logo" />
   </div>
+ 
 
   <div className="search-bar">
     <input type="text" placeholder="Busque aqui" />
