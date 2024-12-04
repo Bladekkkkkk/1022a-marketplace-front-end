@@ -55,7 +55,7 @@
   gap: 1.5rem;
 }
 
-.header-actions .login-button {
+.header-actions .login-button  {
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
   background-color: #ff6600;
@@ -86,6 +86,24 @@
 .header-actions .icons .icon:hover {
   color: #ff6600;
 }
+
+.cadastroproduto-button{
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: #ff6600;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cadastroproduto-button:hover {
+  background-color: #e65c00;
+}
+
+
 
 /* Produtos */
 .produtos-container {
@@ -178,7 +196,6 @@
 }
 
 
-
 /* Usuários */
 .usuarios-container {
   padding: 1rem;
@@ -233,4 +250,201 @@
   .usuario-item {
     width: calc(100% - 1rem);
   }
+}
+
+/*Cadastro de Produtos*/
+
+.container {
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px; /* Para evitar problemas em telas pequenas */
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ff6600, #ff9900); /* Gradiente */
+  -webkit-background-clip: text;  /* Necessário para o gradiente no texto */
+  color: transparent; /* Torna o texto transparente para que o gradiente seja visível */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+form {
+  background: linear-gradient(to right, #ff6600, #ff9900);
+  /* Exemplo de gradiente */
+  border-radius: 8px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 350px;
+  box-sizing: border-box;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+form div {
+  margin-bottom: 15px;
+}
+
+form input[type="text"],
+form input[type="tamanhotela"],
+form input[type="resolucaotela"],
+form input[type="proporcaotela"],
+form input[type="frequenciatela"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ff6600;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form input[type="text"]:focus,
+form input[type="tamanhotela"]:focus,
+form input[type="resolucaotela"]:focus,
+form input[type="proporcaotela"]:focus,
+form input[type="frequenciatela"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
+}
+
+form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #023d79;
+}
+form input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #023d79;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+form input[type="submit"]:hover {
+  background-color: #023d79;
+  transform: translateY(-2px);
+}
+
+form input[type="submit"]:active {
+  transform: translateY(0);
+}
+
+form div input::placeholder {
+  color: #ffffff;
+}
+
+form div input {
+  background: #1f1d1d;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* Estilo para o formulário de Cadastro de Usuário */
+
+/* Contêiner para centralizar o formulário */
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;  /* Ocupa toda a altura da tela */
+  padding: 20px;  /* Garantir que o conteúdo não fique grudado nas bordas */
+  margin: 0;  /* Remover margens adicionais */
+}
+
+
+/* O formulário em si já possui o estilo de centralização */
+form {
+  background: linear-gradient(to right, #ff6600, #ff9900);  /* Gradiente */
+  border-radius: 8px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 350px;
+  box-sizing: border-box;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="date"],
+form input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ff6600;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: #1f1d1d;  /* Fundo do campo */
+  color: #fff;  /* Cor do texto */
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="date"]:focus,
+form input[type="tel"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
+}
+
+form input::placeholder {
+  color: #ffffff;
+}
+
+/* Estilo do botão de envio */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #023d79;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #023d79;
+  transform: translateY(-2px);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
 }

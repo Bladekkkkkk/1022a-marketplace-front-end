@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from "react"
 import { useNavigate } from 'react-router-dom';
+
 function CadastroProduto() {
     const navigate = useNavigate()
     const [id, setId] = useState("")
@@ -100,7 +101,7 @@ function CadastroProduto() {
           <button
             className="login-button"
             onClick={() => window.location.href = "cadastro-usuario"}>
-            Entrar ou Cadastrar-se
+            Cadastrar-se
           </button>
           
           <div className="icons">
@@ -111,34 +112,39 @@ function CadastroProduto() {
         </div>
       </header>
 
-            <h1>Cadastro de Produtos</h1>
-            <form onSubmit={handleForm}>
-                <div>
-                    <input placeholder="Id" type="text" name="id" id="id" onChange={handleId} />
-                </div>
-                <div>
-                    <input placeholder="Nome" type="text" name="nome" id="nome" onChange={handleNome} />
-                </div>
-                <div>
-                    <input placeholder="Marca" type="text" name="marca" id="marca" onChange={handleMarca} />
-                </div>
-                <div>
-                    <input placeholder="Tamanho" type="tamanhotela" name="tamanhotela" id="tamanhotela" onChange={handleTamanhotela} />
-                </div>
-                <div>
-                    <input placeholder="Resolução" type="resolucaotela" name="resolucaotela" id="resolucaotela" onChange={handleResolucaotela} />
-                </div>
-                <div>
-                    <input placeholder="Proporção" type="proporcaotela" name="proporcaotela" id="proporcaotela" onChange={handleProporcaotela} />
-                </div>
-                <div>
-                    <input placeholder="Frequência" type="frequenciatela" name="frequenciatela" id="frequenciatela" onChange={handleFrequenciatela} />
-                </div>
-                <div>
-                    <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" onChange={handleImagem} />
-                </div>
-                <input type="submit" value="Cadastrar" />
-            </form>
+
+      
+      <div className="container">
+      <h1>Cadastro de Produtos</h1>
+    <form onSubmit={handleForm}>
+        <div>
+            <input placeholder="Id" type="text" name="id" id="id" onChange={handleId} />
+        </div>
+        <div>
+            <input placeholder="Nome" type="text" name="nome" id="nome" onChange={handleNome} />
+        </div>
+        <div>
+            <input placeholder="Marca" type="text" name="marca" id="marca" onChange={handleMarca} />
+        </div>
+        <div>
+            <input placeholder="Tamanho" type="tamanhotela" name="tamanhotela" id="tamanhotela" onChange={handleTamanhotela} />
+        </div>
+        <div>
+            <input placeholder="Resolução" type="resolucaotela" name="resolucaotela" id="resolucaotela" onChange={handleResolucaotela} />
+        </div>
+        <div>
+            <input placeholder="Proporção" type="proporcaotela" name="proporcaotela" id="proporcaotela" onChange={handleProporcaotela} />
+        </div>
+        <div>
+            <input placeholder="Frequência" type="frequenciatela" name="frequenciatela" id="frequenciatela" onChange={handleFrequenciatela} />
+        </div>
+        <div>
+            <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" onChange={handleImagem} />
+        </div>
+        <input type="submit" value="Cadastrar" />
+    </form>
+</div>
+
         </>
     )
 }

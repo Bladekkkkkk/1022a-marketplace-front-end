@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 function CadastroUsuario() {
     const navigate = useNavigate();
     const [id, setId] = useState("");
@@ -79,7 +80,7 @@ function CadastroUsuario() {
           <button
             className="login-button"
             onClick={() => window.location.href = "cadastro-usuario"}>
-            Entrar ou Cadastrar-se
+            Cadastrar-se
           </button>
           
           <div className="icons">
@@ -90,10 +91,13 @@ function CadastroUsuario() {
         </div>
       </header>
 
-        <main className="main">
+
+      
+        <main className="container">
+        <h1>Cadastro de Usuário</h1>
             <div className="signup">
+            
                 <form onSubmit={handleForm} className="form-cadastro">
-                    <h2>Cadastro de Usuário</h2>
 
                     <div>
                         <label htmlFor="id">ID</label>
