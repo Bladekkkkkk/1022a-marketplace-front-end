@@ -286,17 +286,14 @@
 /*Cadastro de Produtos*/
 
 .container {
-  font-family: Arial, sans-serif;
-  background-color: #000000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px; /* Para evitar problemas em telas pequenas */
-  margin: 0;
-  box-sizing: border-box;
-  text-align: center;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 50px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin: 0 auto; /* Centraliza o container horizontalmente */
+  margin-top: 50px; /* Adiciona o espaço desejado entre o cabeçalho e o formulário */
 }
 
 h1 {
@@ -311,12 +308,8 @@ h1 {
 
 
 form {
-  background: linear-gradient(to right, #ff6600, #ff9900);
-  /* Exemplo de gradiente */
-  border-radius: 8px;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 350px;
+  width: 450px;
   box-sizing: border-box;
   animation: fadeIn 0.5s ease-in-out;
 }
@@ -326,15 +319,18 @@ form div {
   margin-bottom: 15px;
 }
 
-form input[type="text"],
-form input[type="tamanhotela"],
-form input[type="resolucaotela"],
-form input[type="proporcaotela"],
-form input[type="frequenciatela"] {
+input[type="text"],
+input[type="tamanhotela"],
+input[type="resolucaotela"],
+input[type="proporcaotela"],
+input[type="frequenciatela"] {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ff6600;
-  border-radius: 4px;
+  border: 1px solid #ff6600; /* Borda laranja */
+  border-radius: 5px;
+  background-color: #2e2e2e;
+  color: #ffffff;
+  font-size: 1rem;
   box-sizing: border-box;
 }
 
@@ -384,9 +380,6 @@ form input[type="submit"]:active {
   transform: translateY(0);
 }
 
-form div input::placeholder {
-  color: #ffffff;
-}
 
 form div input {
   background: #1f1d1d;
@@ -403,79 +396,116 @@ form div input {
   }
 }
 
-/* Estilo para o formulário de Cadastro de Usuário */
+
 
 /* Contêiner para centralizar o formulário */
-.signup {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 50vh;  /* Ocupa toda a altura da tela */
-  padding: 20px;  /* Garantir que o conteúdo não fique grudado nas bordas */
-  margin: 0;  /* Remover margens adicionais */
-}
 
-
-/* O formulário em si já possui o estilo de centralização */
-form {
-  background: linear-gradient(to right, #ff6600, #ff9900);  /* Gradiente */
+.container-usuarios {
+  background-color: #1e1e1e;
   border-radius: 10px;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 500px;
-  box-sizing: border-box;
-  animation: fadeIn 0.5s ease-in-out;
+  padding: 50px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin: 0 auto; /* Centraliza o container horizontalmente */
+  margin-top: 50px; /* Adiciona o espaço desejado entre o cabeçalho e o formulário */
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #b3b3b3;
+}
+
+input::placeholder {
+  color: transparent; /* Deixa o texto invisível */
 }
 
 
-
+/* Modifique o padding e a largura dos inputs para torná-los mais largos */
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
 form input[type="date"],
 form input[type="tel"] {
-  width: 100%;
-  padding: 10px;
+  width: 100%; /* Garante que os inputs ocupem toda a largura do formulário */
+  padding: 15px; /* Aumente o padding para tornar os inputs mais "gordinhos" */
   border: 1px solid #ff6600;
-  border-radius: 4px;
-  box-sizing: border-box;
-  background: #1f1d1d;  /* Fundo do campo */
-  color: #fff;  /* Cor do texto */
-}
-
-form input[type="text"]:focus,
-form input[type="email"]:focus,
-form input[type="password"]:focus,
-form input[type="date"]:focus,
-form input[type="tel"]:focus {
-  border-color: #007bff;
-  outline: none;
-  box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
-}
-
-form input::placeholder {
+  border-radius: 8px; /* Aumentei o border-radius para dar um efeito mais arredondado */
+  background-color: #2e2e2e;
   color: #ffffff;
+  font-size: 1rem;
+  box-sizing: border-box;
 }
 
-/* Estilo do botão de envio */
-button[type="submit"] {
+
+/* Estilo quando o campo está em foco */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="tel"]:focus {
+  border-color: #007bff; /* Azul ao focar */
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.25); /* Brilho ao focar */
+}
+
+
+input:focus {
+  outline: none;
+  border-color: #ff6600; /* Laranja no foco também */
+  box-shadow: 0 0 5px rgba(255, 102, 0, 0.7); /* Efeito de destaque */
+}
+
+
+.input-group {
+  margin-bottom: 15px; /* Espaçamento entre os campos */
+}
+
+.terms {
+  margin: 15px 0;
+  font-size: 0.8rem;
+}
+
+.terms a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+.submit-btn {
   width: 100%;
-  padding: 12px;
-  background-color: #ff6600;
+  background-color: #0066cc;
+  color: #ffffff;
   border: none;
   border-radius: 5px;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
+  padding: 10px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover {
-  background-color: #023d79;
-  transform: translateY(-2px);
+.submit-btn:hover {
+  background-color: #004c99;
 }
 
-button[type="submit"]:active {
-  transform: translateY(0);
+.submit-btn:disabled {
+  background-color: #555555;
+  cursor: not-allowed;
 }
+

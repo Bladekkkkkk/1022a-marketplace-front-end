@@ -76,7 +76,6 @@ function Appi() {
               <div key={usuario.id} className="usuario-item">
                 <h1 className="usuario-nome">{usuario.nome}</h1>
                 <p>Email: {usuario.email}</p>
-                <p className="usuario-senha">Senha: {usuario.senha}</p>
                 <p className="usuario-datanascimento">Data de Nascimento: {usuario.datanascimento}</p>
                 <p className="usuario-telefone">Telefone: {usuario.telefone}</p>
                 <p className="usuario-endereco">Endereço: {usuario.endereco}</p>
