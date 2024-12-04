@@ -1,13 +1,15 @@
 import { useNavigate } from "react-router-dom";
+import './App.css'
+
+// Tipo para usuários
+
 
 function Appo() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  return (
+    <>
 
-    // Outras variáveis e funções...
-
-    return (
-        <>
-            <header className="site-header">
+<header className="site-header">
                 <div className="logo">
                     <img src="logo.png" alt="Logo" />
                 </div>
@@ -47,9 +49,8 @@ function Appo() {
                 </div>
             </header>
 
-            {/* Restante do código */}
-        </>
-    );
+    </>
+  )
 }
 
 export default Appo
