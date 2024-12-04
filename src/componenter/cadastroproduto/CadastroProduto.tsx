@@ -32,7 +32,7 @@ function CadastroProduto() {
             })
             if (resposta.status != 500) {
                 alert("Produto Cadastro com Sucesso")
-                navigate("/")
+                navigate("/produtos")
             }
             else {
                 const mensagem = await resposta.text()

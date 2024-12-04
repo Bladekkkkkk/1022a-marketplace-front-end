@@ -93,120 +93,126 @@ function CadastroUsuario() {
 
 
       
-        <main className="container">
-        <h1>Cadastro de Usuário</h1>
-            <div className="signup">
-            
-                <form onSubmit={handleForm} className="form-cadastro">
-
-                    <div>
-                        <label htmlFor="id">ID</label>
-                        <input
-                            placeholder="Id"
-                            type="text"
-                            name="id"
-                            id="id"
-                            value={id}
-                            onChange={(e) => setId(e.target.value)}
-                            required
-                        />
-                    </div>
-
-                    <div>
-                        <label htmlFor="nome">Nome</label>
-                        <input
-                            placeholder="Nome"
-                            type="text"
-                            name="nome"
-                            id="nome"
-                            value={nome}
-                            onChange={(e) => setNome(e.target.value)}
-                            required
-                        />
-                    </div>
-
-                    <div>
-                        <label htmlFor="email">Email</label>
-                        <input
-                            placeholder="Email"
-                            type="email"
-                            name="email"
-                            id="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                    </div>
-
-                    <div>
-                        <label htmlFor="senha">Senha</label>
-                        <input
-                            placeholder="Senha"
-                            type="password"
-                            name="senha"
-                            id="senha"
-                            value={senha}
-                            onChange={(e) => setSenha(e.target.value)}
-                            required
-                        />
-                    </div>
-
-                    <div>
-                        <label htmlFor="confirmarsenha">Confirmar Senha</label>
-                        <input
-                            placeholder="Confirmar Senha"
-                            type="password"
-                            name="confirmarsenha"
-                            id="confirmarsenha"
-                            value={confirmarsenha}
-                            onChange={(e) => setConfirmarsenha(e.target.value)}
-                            required
-                        />
-                    </div>
-
-                    <div>
-                        <label htmlFor="datanascimento">Data de Nascimento</label>
-                        <input
-                            placeholder="Data de Nascimento"
-                            type="date"
-                            name="datanascimento"
-                            id="datanascimento"
-                            value={datanascimento}
-                            onChange={(e) => setDatanascimento(e.target.value)}
-                            required
-                        />
-                    </div>
-
-                    <div>
-                        <label htmlFor="telefone">Telefone</label>
-                        <input
-                            placeholder="Telefone (XX) X XXXX-XXXX"
-                            type="tel"
-                            name="telefone"
-                            id="telefone"
-                            value={telefone}
-                            onChange={(e) => setTelefone(e.target.value)}
-                            required
-                        />
-                    </div>
-
-                    <div>
-                        <label htmlFor="endereco">Endereço</label>
-                        <input
-                            placeholder="Endereço"
-                            type="text"
-                            name="endereco"
-                            id="endereco"
-                            value={endereco}
-                            onChange={(e) => setEndereco(e.target.value)}
-                            required
-                        />
-                    </div>
-
-                    <button type="submit">Cadastrar</button>
-                </form>
+      <main className="container">
+    <h1>Cadastro de Usuário</h1>
+    <div className="signup">
+        <form onSubmit={handleForm} className="form-cadastro">
+            <div className="input-group">
+                <label htmlFor="id">ID</label>
+                <input
+                    placeholder="Id"
+                    type="text"
+                    name="id"
+                    id="id"
+                    value={id}
+                    onChange={(e) => setId(e.target.value)}
+                    required
+                />
             </div>
-        </main>
+
+            <div className="input-group">
+                <label htmlFor="nome">Nome</label>
+                <input
+                    placeholder="Nome"
+                    type="text"
+                    name="nome"
+                    id="nome"
+                    value={nome}
+                    onChange={(e) => setNome(e.target.value)}
+                    required
+                />
+            </div>
+
+            <div className="input-group">
+                <label htmlFor="email">Email</label>
+                <input
+                    placeholder="Email"
+                    type="email"
+                    name="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
+            </div>
+
+            <div className="input-group">
+                <label htmlFor="senha">Senha</label>
+                <input
+                    placeholder="Senha"
+                    type="password"
+                    name="senha"
+                    id="senha"
+                    value={senha}
+                    onChange={(e) => setSenha(e.target.value)}
+                    required
+                />
+            </div>
+
+            <div className="input-group">
+                <label htmlFor="confirmarsenha">Confirmar Senha</label>
+                <input
+                    placeholder="Confirmar Senha"
+                    type="password"
+                    name="confirmarsenha"
+                    id="confirmarsenha"
+                    value={confirmarsenha}
+                    onChange={(e) => setConfirmarsenha(e.target.value)}
+                    required
+                />
+            </div>
+
+            <div className="input-group">
+                <label htmlFor="datanascimento">Data de Nascimento</label>
+                <input
+                    placeholder="Data de Nascimento"
+                    type="date"
+                    name="datanascimento"
+                    id="datanascimento"
+                    value={datanascimento}
+                    onChange={(e) => setDatanascimento(e.target.value)}
+                    required
+                />
+            </div>
+
+            <div className="input-group">
+                <label htmlFor="telefone">Telefone</label>
+                <input
+                    placeholder="Telefone (XX) X XXXX-XXXX"
+                    type="tel"
+                    name="telefone"
+                    id="telefone"
+                    value={telefone}
+                    onChange={(e) => setTelefone(e.target.value)}
+                    required
+                />
+            </div>
+
+            <div className="input-group">
+                <label htmlFor="endereco">Endereço</label>
+                <input
+                    placeholder="Endereço"
+                    type="text"
+                    name="endereco"
+                    id="endereco"
+                    value={endereco}
+                    onChange={(e) => setEndereco(e.target.value)}
+                    required
+                />
+            </div>
+
+            <div className="terms">
+                <label>
+                    <input type="checkbox" name="terms" required />
+                    Aceito os <a href="#">termos de serviço</a> e a <a href="#">política de privacidade</a>.
+                </label>
+            </div>
+
+            <button type="submit" className="submit-btn">Cadastrar</button>
+        </form>
+    </div>
+</main>
+
         </>
     );
 }
