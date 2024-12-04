@@ -36,7 +36,7 @@ function Appo() {
           <button
             className="login-button"
             onClick={() => window.location.href = "cadastro-usuario"}>
-            Entrar ou Cadastrar-se
+            Cadastrar-se
           </button>
           
           <div className="icons">
