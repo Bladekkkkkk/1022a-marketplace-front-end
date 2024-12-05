@@ -50,7 +50,6 @@ function CadastroUsuario() {
             alert("As senhas não coincidem!");
             return;
         }
-        
 
         try {
             const resposta = await fetch("https://one022a-marketplace-18yz.onrender.com/usuarios", {
@@ -96,22 +95,22 @@ function CadastroUsuario() {
                 <div className="header-actions">
                     <button
                         className="produto-button"
-                        onClick={() => window.location.href = "produtos"}>
+                        onClick={() => navigate("/produtos")}>
                         Produtos
                     </button>
                     <button
                         className="usuario-button"
-                        onClick={() => window.location.href = "usuarios"}>
+                        onClick={() => navigate("/usuarios")}>
                         Usuários
                     </button>
                     <button
                         className="cadastroproduto-button"
-                        onClick={() => window.location.href = "cadastro-produto"}>
+                        onClick={() => navigate("/cadastro-produto")}>
                         Cadastrar Produtos
                     </button>
                     <button
                         className="login-button"
-                        onClick={() => window.location.href = "cadastro-usuario"}>
+                        onClick={() => navigate("/cadastro-usuario")}>
                         Cadastrar-se
                     </button>
 
@@ -220,20 +219,18 @@ function CadastroUsuario() {
                         </div>
 
                         <div className="terms">
-    <label>
-        <input
-            type="checkbox"
-            name="terms"
-            required
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                // Aqui você pode adicionar lógica de manipulação do evento, por exemplo:
-                console.log(e.target.checked); // Verifica se o checkbox está marcado ou não
-            }}
-        />
-        Aceito os <a href="#">termos de serviço</a> e a <a href="#">política de privacidade</a>.
-    </label>
-</div>
-
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="terms"
+                                    required
+                                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                                        console.log(e.target.checked);
+                                    }}
+                                />
+                                Aceito os <a href="#">termos de serviço</a> e a <a href="#">política de privacidade</a>.
+                            </label>
+                        </div>
 
                         <button type="submit" className="submit-btn">Cadastrar</button>
                     </form>

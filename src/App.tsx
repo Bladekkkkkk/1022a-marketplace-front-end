@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './App.css'
+
 // Tipo para produtos
 type ProdutoType = {
   id: number,
@@ -12,27 +14,21 @@ type ProdutoType = {
   imagem: string
 }
 
-// Tipo para usuários
-
-
 function App() {
+  const navigate = useNavigate()
   const [produtos, setProdutos] = useState<ProdutoType[]>([])
 
-  // useEffect para carregar produtos e usuários
+  // useEffect para carregar produtos
   useEffect(() => {
     // Buscar os produtos
     fetch("https://one022a-marketplace-18yz.onrender.com/produtos")
       .then(resposta => resposta.json())
       .then(dados => setProdutos(dados))
-
-
   }, [])
 
   return (
     <>
-
-
-<header className="site-header">
+      <header className="site-header">
         <div className="logo">
           <img src="logo.png" alt="Logo" />
         </div>
@@ -43,27 +39,27 @@ function App() {
         </div>
 
         <div className="header-actions">
-        <button
+          <button
             className="produto-button"
-            onClick={() => window.location.href = "produtos"}>
+            onClick={() => navigate("/produtos")}>
             Produtos
           </button>
-        <button
+          <button
             className="usuario-button"
-            onClick={() => window.location.href = "usuarios"}>
+            onClick={() => navigate("/usuarios")}>
             Usuários
           </button>
-        <button
+          <button
             className="cadastroproduto-button"
-            onClick={() => window.location.href = "cadastro-produto"}>
+            onClick={() => navigate("/cadastro-produto")}>
             Cadastrar Produtos
           </button>
           <button
             className="login-button"
-            onClick={() => window.location.href = "cadastro-usuario"}>
+            onClick={() => navigate("/cadastro-usuario")}>
             Cadastrar-se
           </button>
-          
+
           <div className="icons">
             <a href="#" className="icon">🔍</a>
             <a href="#" className="icon">🛒</a>
@@ -71,7 +67,6 @@ function App() {
           </div>
         </div>
       </header>
-
 
       {/* Listagem de Produtos */}
       <div className="produtos-container">
@@ -95,10 +90,6 @@ function App() {
           }
         </div>
       </div>
-
-
-
-
     </>
   )
 }

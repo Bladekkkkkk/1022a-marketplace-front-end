@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './App.css'
 
 // Tipo para usuários
@@ -14,9 +15,10 @@ type UsuarioType = {
 }
 
 function Appi() {
+  const navigate = useNavigate()
   const [usuarios, setUsuarios] = useState<UsuarioType[]>([])
 
-  // useEffect para carregar produtos e usuários
+  // useEffect para carregar usuários
   useEffect(() => {
     // Buscar os usuários
     fetch("https://one022a-marketplace-18yz.onrender.com/usuarios")
@@ -26,8 +28,7 @@ function Appi() {
 
   return (
     <>
-
-<header className="site-header">
+      <header className="site-header">
         <div className="logo">
           <img src="logo.png" alt="Logo" />
         </div>
@@ -38,24 +39,24 @@ function Appi() {
         </div>
 
         <div className="header-actions">
-        <button
+          <button
             className="produto-button"
-            onClick={() => window.location.href = "produtos"}>
+            onClick={() => navigate("/produtos")}>
             Produtos
           </button>
-        <button
+          <button
             className="usuario-button"
-            onClick={() => window.location.href = "usuarios"}>
+            onClick={() => navigate("/usuarios")}>
             Usuários
           </button>
-        <button
+          <button
             className="cadastroproduto-button"
-            onClick={() => window.location.href = "cadastro-produto"}>
+            onClick={() => navigate("/cadastro-produto")}>
             Cadastrar Produtos
           </button>
           <button
             className="login-button"
-            onClick={() => window.location.href = "cadastro-usuario"}>
+            onClick={() => navigate("/cadastro-usuario")}>
             Cadastrar-se
           </button>
           
@@ -70,7 +71,7 @@ function Appi() {
       {/* Listagem de Usuários */}
       <div className="usuarios-container">
         <h1 className='titulo-usuario'>Usuários</h1>
-        <div className="usuarios-list"> {/* Adicionando wrapper */}
+        <div className="usuarios-list">
           {
             usuarios.map(usuario => (
               <div key={usuario.id} className="usuario-item">
@@ -82,7 +83,7 @@ function Appi() {
               </div>
             ))
           }
-        </div> {/* Fechando a div aqui */}
+        </div>
       </div>
     </>
   )
