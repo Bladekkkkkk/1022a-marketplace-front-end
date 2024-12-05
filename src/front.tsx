@@ -22,22 +22,22 @@ function Appo() {
                 <div className="header-actions">
                     <button
                         className="produto-button"
-                        onClick={() => navigate("/produtos")}> {/* Alterado para navigate */}
+                        onClick={() => navigate("/produtos")}> 
                         Produtos
                     </button>
                     <button
                         className="usuario-button"
-                        onClick={() => navigate("/usuarios")}> {/* Alterado para navigate */}
+                        onClick={() => navigate("/usuarios")}> 
                         Usuários
                     </button>
                     <button
                         className="cadastroproduto-button"
-                        onClick={() => navigate("/cadastro-produto")}> {/* Alterado para navigate */}
+                        onClick={() => navigate("/cadastro-produto")}> 
                         Cadastrar Produtos
                     </button>
                     <button
                         className="login-button"
-                        onClick={() => navigate("/cadastro-usuario")}> {/* Alterado para navigate */}
+                        onClick={() => navigate("/cadastro-usuario")}>
                         Cadastrar-se
                     </button>
 
