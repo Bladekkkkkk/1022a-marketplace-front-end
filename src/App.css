@@ -139,11 +139,14 @@
 /* Produtos */
 .produtos-container {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 1rem;
+  flex-direction: column; /* Organiza título e lista de produtos em coluna */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  min-height: calc(100vh - 100px); /* Faz com que ocupe a altura da tela menos o espaço do header */
+  text-align: center; /* Centraliza o texto do título */
+  padding: 20px;
+  background-color: #333; /* Exemplo para destacar o fundo */
 }
-
 .produtos-list {
   display: flex;
   flex-wrap: wrap;
