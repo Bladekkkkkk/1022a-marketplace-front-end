@@ -155,7 +155,7 @@
 
 .titulo-produto {
   font-size: 60px;
-  color: #333;
+  color: #ff6600;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -238,7 +238,7 @@
 
 .titulo-usuario {
   font-size: 60px;
-  color: #333;
+  color: #ff6600;
   margin-bottom: 30px;
 }
 
@@ -268,8 +268,15 @@
 .usuario-nome {
   font-size: 1.2em;
   margin: 0.5rem 0;
-  color: #333;
+  color: #000000;
 }
+
+p {
+  font-size: 1em;
+  margin: 0.5rem 0;
+  color: #000000;
+}
+
 
 /* Responsividade */
 @media (max-width: 1024px) {
