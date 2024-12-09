@@ -27,6 +27,16 @@
   gap: 10px;
 }
 
+.logo-text {
+  font-size: 1.8rem; /* Tamanho da fonte */
+  font-weight: bold; /* Deixa o texto em negrito */
+  color: #ff6600; /* Cor suave para contraste */
+  font-family: 'Poppins', sans-serif; /* Fonte moderna e limpa */
+  letter-spacing: 2px; /* Adiciona espaçamento entre letras */
+  text-transform: uppercase; /* Deixa o texto em maiúsculas */
+}
+
+
 .search-bar {
   display: flex;
   flex-grow: 1;
