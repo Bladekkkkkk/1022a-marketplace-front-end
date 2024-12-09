@@ -68,8 +68,9 @@ function CadastroProduto() {
 
 
 <header className="site-header">
-    <div className="logo">
-        <img src="logo.png" alt="Logo" />
+       <div className="logo">
+        <span className="icon">🖥️</span>
+        <span className="logo-text">KM MONITORES</span>
     </div>
 
     <div className="search-bar">

@@ -14,8 +14,17 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.logo img {
-  height: 50px;
+.logo .icon {
+  font-size: 2rem; /* Aumenta o tamanho do ícone */
+  color: #61dafb;  /* Mantém a cor uniforme */
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .search-bar {
