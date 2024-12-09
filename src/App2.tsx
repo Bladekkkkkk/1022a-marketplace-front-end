@@ -61,7 +61,6 @@ function Appi() {
         </button>
 
         <div className="icons">
-            <a href="#" className="icon">🔍</a>
             <a href="#" className="icon">🛒</a>
             <a href="#" className="icon">❤️</a>
         </div>
