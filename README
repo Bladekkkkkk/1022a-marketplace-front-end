@@ -1,0 +1,9 @@
+- Instruções para rodar o projeto localmente.
+Para rodar o projeto localmente, primeiro deve ter o visual studio code e abrir o codigo no próprio, após isso abrir o terminar der um "npm install", após ser efetuado com sucesso esse processo, digite um "npm run dev", clique no link segurando o contrl, para poder ser direcionado onde o projeto estará rodando localmente.
+
+- Descrição do TEMA escolhido pelo grupo.
+O tema que foi escolhido foi uma loja de venda de monitores.
+
+- Descrição do tema escolhido e das funcionalidades implementadas.
+Uma loja para a venda e compra de monitores de forma online.
+As funcinalidades são cadastro de produto, listagem de produtos, cadastro de usuários e listagem dos usuários.
