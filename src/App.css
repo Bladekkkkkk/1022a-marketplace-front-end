@@ -106,22 +106,6 @@
   color: #ff6600;
 }
 
-.cadastroproduto-button{
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  background-color: #ff6600;
-  color: #fff;
-  font-weight: bold;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.cadastroproduto-button:hover {
-  background-color: #e65c00;
-}
-
 
 .produto-button{
   padding: 0.8rem 1.5rem;
@@ -164,7 +148,7 @@
   min-height: calc(100vh - 100px); /* Faz com que ocupe a altura da tela menos o espaço do header */
   text-align: center; /* Centraliza o texto do título */
   padding: 20px;
-  background-color: #333; /* Exemplo para destacar o fundo */
+
 }
 .produtos-list {
   display: flex;
@@ -315,8 +299,9 @@ p {
 
 /*Cadastro de Produtos*/
 
+
 .container {
-  background-color: #1e1e1e;
+  background-color: #333;
   border-radius: 10px;
   padding: 50px;
   width: 100%;
@@ -324,6 +309,22 @@ p {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   margin: 0 auto; /* Centraliza o container horizontalmente */
   margin-top: 50px; /* Adiciona o espaço desejado entre o cabeçalho e o formulário */
+}
+
+.cadastroproduto-button{
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: #ff6600;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cadastroproduto-button:hover {
+  background-color: #e65c00;
 }
 
 h1 {
