@@ -70,7 +70,7 @@ function App() {
 
       {/* Listagem de Produtos */}
       <div className="produtos-container">
-        <h1 className='titulo-produto'>Produtos</h1>
+        <h1 className='titulo-produto'>Monitores</h1>
         <div className="produtos-list">
           {
             produtos.map(produto => (
