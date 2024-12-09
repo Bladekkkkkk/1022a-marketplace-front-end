@@ -1,6 +1,7 @@
 #root {
   margin: 0px;
   padding: 0px;
+  background-color: #1a1919;
 }
 
 /* Header */
@@ -148,6 +149,7 @@
   min-height: calc(100vh - 100px); /* Faz com que ocupe a altura da tela menos o espaço do header */
   text-align: center; /* Centraliza o texto do título */
   padding: 20px;
+  background-color: #12111133;
 
 }
 .produtos-list {
@@ -238,6 +240,7 @@
 .usuarios-container {
   padding: 1rem;
   text-align: center;
+  background-color: #12111133;
 }
 
 .titulo-usuario {
@@ -301,7 +304,7 @@ p {
 
 
 .container {
-  background-color: #333;
+  background-color: #1e1e1e;
   border-radius: 10px;
   padding: 50px;
   width: 100%;

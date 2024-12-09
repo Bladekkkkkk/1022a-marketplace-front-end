@@ -75,7 +75,7 @@ function App() {
           {
             produtos.map(produto => (
               <div key={produto.id} className="produto-item">
-                <h3 className="produto-nome">{produto.nome}</h3> {/* Use h3 para o nome do produto */}
+                <h3 className="produto-nome">{produto.nome}</h3> 
                 <div className='container-imagem'>
                   <img src={produto.imagem} alt="Imagem do produto" />
                 </div>
