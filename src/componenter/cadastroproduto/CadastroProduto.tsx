@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 function CadastroProduto() {
     const navigate = useNavigate()
-    const [id, setId] = useState("")
     const [nome, setNome] = useState("")
     const [marca, setMarca] = useState("")
     const [tamanhotela, setTamanhotela] = useState("")
@@ -20,7 +19,6 @@ function CadastroProduto() {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    id: id,
                     nome: nome,
                     marca: marca,
                     tamanhotela: tamanhotela,
@@ -43,9 +41,6 @@ function CadastroProduto() {
             alert("Servidor não está respondendo.")
         }
 
-    }
-    function handleId(event: ChangeEvent<HTMLInputElement>) {
-        setId(event.target.value)
     }
     function handleNome(event: ChangeEvent<HTMLInputElement>) {
         setNome(event.target.value)
@@ -118,10 +113,6 @@ function CadastroProduto() {
       <div className="container">
       <h1>Cadastro de Produtos</h1>
       <form onSubmit={handleForm}>
-    <div className="input-group">
-        <label htmlFor="id">Id</label>
-        <input placeholder="Id" type="text" name="id" id="id" onChange={handleId} />
-    </div>
     <div className="input-group">
         <label htmlFor="nome">Nome</label>
         <input placeholder="Nome" type="text" name="nome" id="nome" onChange={handleNome} />
