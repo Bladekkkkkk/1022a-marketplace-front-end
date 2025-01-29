@@ -5,8 +5,11 @@ import { Link} from 'react-router-dom'
 type ProdutoType = {
   id: number,
   nome: string,
-  preco: string,
-  descricao: string,
+  marca: string,
+  tamanhotela: string,
+  resolucaotela: string,
+  proporcaotela: string,
+  frequenciatela: string,
   imagem: string
 }
 
@@ -53,20 +56,22 @@ function App() {
 
   return (
     <>
-      {/* Listagem de Produtos */}
-      <div className="produtos-container">
-      <Link to="/cadastro-produto">Cadastro de Produto</Link>
-        <h1 className='titulo-produto'>Produtos</h1>
+     {/* Listagem de Produtos */}
+     <div className="produtos-container">
+        <h1 className='titulo-produto'>Monitores</h1>
         <div className="produtos-list">
           {
             produtos.map(produto => (
               <div key={produto.id} className="produto-item">
-                <h3 className="produto-nome">{produto.nome}</h3> {/* Use h3 para o nome do produto */}
+                <h3 className="produto-nome">{produto.nome}</h3> 
                 <div className='container-imagem'>
                   <img src={produto.imagem} alt="Imagem do produto" />
                 </div>
-                <p className="produto-preco">{produto.preco}</p>
-                <p className="produto-descricao">{produto.descricao}</p>
+                <p className="produto-marca">{produto.marca}</p>
+                <p className="produto-tamanhotela">{produto.tamanhotela}</p>
+                <p className="produto-resolucaotela">{produto.resolucaotela}</p>
+                <p className="produto-proporcaotela">{produto.proporcaotela}</p>
+                <p className="produto-frequenciatela">{produto.frequenciatela}</p>
                 <button className="botao-comprar">Comprar</button>
                 <button onClick={() => handleExcluir(produto.id)}>Excluir</button>
                 <Link to={`/alterar-produto/${produto.id}`}>Alterar</Link>

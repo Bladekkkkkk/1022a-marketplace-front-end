@@ -1,7 +1,4 @@
 
-
-
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -15,11 +12,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  justify-content: center;
-  width: 100vw;
 }
-
 
 a {
   font-weight: 500;
@@ -34,7 +27,6 @@ body {
   margin: 0; /* Remove margens do body */
   padding: 0; /* Remove padding do body */
   /* outros estilos... */
-  width: 100vw;
 }
 
 
@@ -72,32 +64,4 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;}
-}
-
-form{
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  width: 70vw;
-  border: 1px solid #d0d0d0;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  padding: 40px;
-  border-radius: 5px;
-}
-
-form>div{
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-}
-form>div>input{
-  padding: 10px 5px;
-  border-radius: 5px;
-  border: 1px solid #d0d0d0;
-}
-
-
-.imagem-produto-reduzida{
-  width: 60px;
-  height: auto;
 }
