@@ -73,8 +73,8 @@ function App() {
                 <p className="produto-proporcaotela">{produto.proporcaotela}</p>
                 <p className="produto-frequenciatela">{produto.frequenciatela}</p>
                 <button className="botao-comprar">Comprar</button>
-                <button onClick={() => handleExcluir(produto.id)}>Excluir</button>
-                <Link to={`/alterar-produto/${produto.id}`}>Alterar</Link>
+                <button className="botao-excluir" onClick={() => handleExcluir(produto.id)}>Excluir</button>
+                <Link  className="botao-alterar" to={`/alterar-produto/${produto.id}`}>Alterar</Link>
               </div>
             ))
           }
