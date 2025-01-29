@@ -81,7 +81,7 @@ function AlterarProduto(){
         <>
           
       <div className="container">
-      <h1>Cadastro de Produtos</h1>
+      <h1>Alterar Produtos</h1>
       <form onSubmit={handleForm}>
     <div className="input-group">
         <label htmlFor="nome">Nome</label>
@@ -111,7 +111,7 @@ function AlterarProduto(){
         <label htmlFor="imagem">URL Imagem</label>
         <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" onChange={handleImagem} />
     </div>
-    <input type="submit" value="Cadastrar" className="submit-btn" />
+    <input type="submit" value="Alterar" className="submit-btn" />
     </form>
     
     </div>
