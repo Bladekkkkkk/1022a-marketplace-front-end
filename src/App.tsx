@@ -29,19 +29,19 @@ function App() {
   // useEffect para carregar produtos e usuários
   useEffect(() => {
     // Buscar os produtos
-    fetch("http://localhost:8000/produtos")
+    fetch("https://one022a-marketplace-18yz.onrender.com/produtos")
       .then(resposta => resposta.json())
       .then(dados => setProdutos(dados))
 
     // Buscar os usuários
-    fetch("http://localhost:8000/produtos")
+    fetch("https://one022a-marketplace-18yz.onrender.com/produtos")
       .then(resposta => resposta.json())
       .then(dados => setUsuarios(dados))
   }, [])
 
   function handleExcluir(id:number){
     alert(`Excluir o produto com id ${id}`)
-    fetch(`http://localhost:8000/produtos/${id}`, {
+    fetch(`https://one022a-marketplace-18yz.onrender.com/produtos/${id}`, {
       method: 'DELETE'
     })
     .then(resposta=>{

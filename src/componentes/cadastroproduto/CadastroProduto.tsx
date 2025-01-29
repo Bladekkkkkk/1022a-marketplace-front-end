@@ -14,7 +14,7 @@ function CadastroProduto(){
     async function handleForm(event: FormEvent){
         event.preventDefault()
         try {
-            const resposta = await fetch("http://localhost:8000/produtos", {
+            const resposta = await fetch("https://one022a-marketplace-18yz.onrender.com/produtos", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

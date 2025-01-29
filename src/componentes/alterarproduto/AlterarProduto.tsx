@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 function AlterarProduto(){
     const { id } = useParams()
     useEffect(()=>{
-        fetch(`http://localhost:8000/produtos/${id}`)
+        fetch(`https://one022a-marketplace-18yz.onrender.com/produtos/${id}`)
         .then(resposta=>resposta.json())
         .then(dados=>{
             setNome(dados.nome)
@@ -27,7 +27,7 @@ function AlterarProduto(){
     async function handleForm(event:FormEvent){
         event.preventDefault()
         try{
-            const resposta = await fetch(`http://localhost:8000/produtos/${id}`,{
+            const resposta = await fetch(`https://one022a-marketplace-18yz.onrender.com/produtos/${id}`,{
                 method:"PUT",
                 headers:{
                     "Content-Type":"application/json"
