@@ -33,7 +33,7 @@ function AlterarProduto(){
                     "Content-Type":"application/json"
                 },
                 body:JSON.stringify({
-                    nnome: nome,
+                    nome: nome,
                     marca: marca,
                     tamanhotela: tamanhotela,
                     resolucaotela: resolucaotela,
