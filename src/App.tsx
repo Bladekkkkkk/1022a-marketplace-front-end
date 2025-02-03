@@ -3,7 +3,7 @@ import './App.css'
 import { Link} from 'react-router-dom'
 // Tipo para produtos
 type ProdutoType = {
-  id: number,
+  id: string,
   nome: string,
   marca: string,
   tamanhotela: string,
@@ -39,7 +39,7 @@ function App() {
       .then(dados => setUsuarios(dados))
   }, [])
 
-  function handleExcluir(id:number){
+  function handleExcluir(id:string){
     alert(`Excluir o produto com id ${id}`)
     fetch(`https://one022a-marketplace-18yz.onrender.com/produtos/${id}`, {
       method: 'DELETE'
