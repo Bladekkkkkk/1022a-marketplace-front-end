@@ -3,7 +3,7 @@ import './App.css'
 import { Link} from 'react-router-dom'
 // Tipo para produtos
 type ProdutoType = {
-  id: string,
+  id: number,
   nome: string,
   marca: string,
   tamanhotela: string,
@@ -34,12 +34,12 @@ function App() {
       .then(dados => setProdutos(dados))
 
     // Buscar os usuários
-    fetch("https://one022a-marketplace-18yz.onrender.com/produtos")
+    fetch("https://one022a-marketplace-18yz.onrender.com/usuarios")
       .then(resposta => resposta.json())
       .then(dados => setUsuarios(dados))
   }, [])
 
-  function handleExcluir(id:string){
+  function handleExcluir(id:number){
     alert(`Excluir o produto com id ${id}`)
     fetch(`https://one022a-marketplace-18yz.onrender.com/produtos/${id}`, {
       method: 'DELETE'
@@ -52,7 +52,21 @@ function App() {
         alert("Erro ao excluir o produto: Confira o terminal do backend")
       }
     })
+    alert(`Excluir o usuario com id ${id}`)
+    fetch(`https://one022a-marketplace-18yz.onrender.com/usuarios/${id}`, {
+      method: 'DELETE'
+    })
+    .then(resposta=>{
+      if(resposta.status ===200){
+        alert("Usuario excluído com sucesso")
+        window.location.reload()
+      }else{
+        alert("Erro ao excluir o usuario: Confira o terminal do backend")
+      }
+    })
   }
+
+  
 
   return (
     <>
