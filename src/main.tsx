@@ -1,36 +1,40 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
-import Appi from './App2.tsx'
-import Appo from './front.tsx'
 import './index.css'
-import{
+import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import CadastroProduto from './componenter/cadastroproduto/CadastroProduto.tsx'
-import CadastroUsuario from './componenter/cadastroproduto/CadastroUsuario.tsx'
+import CadastroProduto from './componentes/cadastroproduto/CadastroProduto.tsx';
+import AlterarProduto from './componentes/alterarusuario.tsx/AlterarProduto.tsx';
+import AlterarUsuario from './componentes/alterarusuario.tsx/AlterarUsuario.tsx';
+import Header from './componentes/header/Header.tsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: < Appo/>,
+    element: <><Header/><App/></>,
   },
   {
     path: "/produtos",
-    element: < App/>,
+    element: <><Header/>< App/></>,
   },
   {
     path: "/cadastro-produto",
-    element: <CadastroProduto/>,
+    element: <><Header/><CadastroProduto/></>,
   },
   {
     path: "/usuarios",
-    element: < Appi/>,
+    element: <><Header/>< App/></>,
   },
   {
-    path: "/cadastro-usuario",
-    element: <CadastroUsuario/>,
+    path: "/alterar-produto/:id",
+    element: <><Header/><AlterarProduto/></>,
   },
+  {
+    path: "/alterar-usuario/:id",
+    element: <><Header/><AlterarUsuario/></>,
+  }
   
 ]);
 

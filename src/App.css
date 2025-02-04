@@ -1,6 +1,8 @@
 #root {
   margin: 0px;
   padding: 0px;
+
+  background-color: #1a1919;
 }
 
 /* Header */
@@ -14,9 +16,28 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.logo img {
-  height: 50px;
+.logo .icon {
+  font-size: 2rem; /* Aumenta o tamanho do ícone */
+  color: #61dafb;  /* Mantém a cor uniforme */
+  display: flex;
+  align-items: center;
 }
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-text {
+  font-size: 1.8rem; 
+  font-weight: bold; 
+  color: #ff6600;
+  font-family: 'Poppins', sans-serif; 
+  letter-spacing: 2px; 
+  text-transform: uppercase; 
+}
+
 
 .search-bar {
   display: flex;
@@ -87,22 +108,6 @@
   color: #ff6600;
 }
 
-.cadastroproduto-button{
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  background-color: #ff6600;
-  color: #fff;
-  font-weight: bold;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.cadastroproduto-button:hover {
-  background-color: #e65c00;
-}
-
 
 .produto-button{
   padding: 0.8rem 1.5rem;
@@ -145,7 +150,8 @@
   min-height: calc(100vh - 100px); /* Faz com que ocupe a altura da tela menos o espaço do header */
   text-align: center; /* Centraliza o texto do título */
   padding: 20px;
-  background-color: #333; /* Exemplo para destacar o fundo */
+  background-color: #12111133;
+
 }
 .produtos-list {
   display: flex;
@@ -154,6 +160,7 @@
 }
 
 .titulo-produto {
+  display: flex;
   font-size: 60px;
   color: #ff6600;
   margin-bottom: 1rem;
@@ -229,11 +236,51 @@
   background-color: #be3c00;
 }
 
+.botao-excluir {
+  margin-top: 1%;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #020202;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: center;
+}
+
+.botao-excluir:hover {
+  background-color: #1b1b1b;
+}
+
+.botao-alterar{
+  margin-top: 1%;
+  width: 100%;
+  padding:0.2%;
+  background-color: #ff6600;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: center;
+  font-weight: 500;
+  text-decoration: inherit
+}
+
+.botao-alterar:hover {
+  background-color: #be3c00;
+}
+
+
 
 /* Usuários */
 .usuarios-container {
   padding: 1rem;
   text-align: center;
+  background-color: #12111133;
 }
 
 .titulo-usuario {
@@ -304,6 +351,22 @@ p {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   margin: 0 auto; /* Centraliza o container horizontalmente */
   margin-top: 50px; /* Adiciona o espaço desejado entre o cabeçalho e o formulário */
+}
+
+.cadastroproduto-button{
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: #ff6600;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cadastroproduto-button:hover {
+  background-color: #e65c00;
 }
 
 h1 {
