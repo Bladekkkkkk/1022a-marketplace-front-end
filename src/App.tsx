@@ -23,7 +23,6 @@ function App() {
     fetch("https://one022a-marketplace-18yz.onrender.com/produtos")
       .then(resposta => resposta.json())
       .then(dados => setProdutos(dados))
-
   }, [])
 
   // Função para excluir um produto
