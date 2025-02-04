@@ -12,7 +12,6 @@ function AlterarUsuario(){
             setSenha(dados.senha)
             setDatanascimento(dados.datanascimento)
             setTelefone(dados.telefone)
-            setEndereco(dados.endereco)
         })
     },[])
     const navigate = useNavigate()
@@ -21,7 +20,6 @@ function AlterarUsuario(){
     const [senha, setSenha] = useState("")
     const [datanascimento, setDatanascimento] = useState("")
     const [telefone, setTelefone] = useState("")
-    const [endereco, setEndereco] = useState("")
     async function handleForm(event:FormEvent){
         event.preventDefault()
         try{
@@ -36,7 +34,6 @@ function AlterarUsuario(){
                     senha: senha,
                     datanascimento: datanascimento,
                     telefone: telefone,
-                    endereco: endereco,
                 })
             })
             if(resposta.status!=500){
@@ -68,9 +65,6 @@ function AlterarUsuario(){
     function handleTelefone(event: ChangeEvent<HTMLInputElement>) {
         setTelefone(event.target.value)
     }
-    function handleEndereco(event: ChangeEvent<HTMLInputElement>) {
-        setEndereco(event.target.value)
-    }
     return(
         <>
           
@@ -96,10 +90,6 @@ function AlterarUsuario(){
     <div className="input-group">
         <label htmlFor="telefone">Telefone</label>
         <input placeholder="Telefone" type="text" name="telefone" id="telefone" onChange={handleTelefone} />
-    </div>
-    <div className="input-group">
-        <label htmlFor="endereco">Endereço</label>
-        <input placeholder="Endereco" type="text" name="endereco" id="endereco" onChange={handleEndereco} />
     </div>
     <input type="submit" value="Alterar" className="submit-btn" />
     </form>
