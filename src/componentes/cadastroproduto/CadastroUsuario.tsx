@@ -32,7 +32,7 @@ function CadastroUsuario(){
             })
             if(resposta.status!=500){
                 alert("Usuário Cadastro com Sucesso")
-                navigate("/usarios")
+                navigate("/usuarios")
             }
             else{
                 const mensagem = await resposta.text()
