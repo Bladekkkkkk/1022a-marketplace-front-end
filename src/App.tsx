@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import { Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
 // Tipo para produtos
 type ProdutoType = {
   id: number,
@@ -39,45 +40,46 @@ function App() {
       .then(dados => setUsuarios(dados))
   }, [])
 
-  function handleExcluir(id:number){
-    alert(`Excluir o produto com id ${id}`)
+  // Função para excluir um produto
+  function handleExcluirProduto(id: number) {
     fetch(`https://one022a-marketplace-18yz.onrender.com/produtos/${id}`, {
       method: 'DELETE'
     })
-    .then(resposta=>{
-      if(resposta.status ===200){
-        alert("Produto excluído com sucesso")
-        window.location.reload()
-      }else{
-        alert("Erro ao excluir o produto: Confira o terminal do backend")
-      }
-    })
-    alert(`Excluir o usuario com id ${id}`)
+      .then(resposta => {
+        if (resposta.status === 200) {
+          alert("Produto excluído com sucesso")
+          setProdutos(produtos.filter(produto => produto.id !== id)) // Atualiza a lista de produtos
+        } else {
+          alert("Erro ao excluir o produto: Confira o terminal do backend")
+        }
+      })
+  }
+
+  // Função para excluir um usuário
+  function handleExcluirUsuario(id: number) {
     fetch(`https://one022a-marketplace-18yz.onrender.com/usuarios/${id}`, {
       method: 'DELETE'
     })
-    .then(resposta=>{
-      if(resposta.status ===200){
-        alert("Usuario excluído com sucesso")
-        window.location.reload()
-      }else{
-        alert("Erro ao excluir o usuario: Confira o terminal do backend")
-      }
-    })
+      .then(resposta => {
+        if (resposta.status === 200) {
+          alert("Usuário excluído com sucesso")
+          setUsuarios(usuarios.filter(usuario => usuario.id !== id)) // Atualiza a lista de usuários
+        } else {
+          alert("Erro ao excluir o usuário: Confira o terminal do backend")
+        }
+      })
   }
-
-  
 
   return (
     <>
-     {/* Listagem de Produtos */}
-     <div className="produtos-container">
+      {/* Listagem de Produtos */}
+      <div className="produtos-container">
         <h1 className='titulo-produto'>Monitores</h1>
         <div className="produtos-list">
           {
             produtos.map(produto => (
               <div key={produto.id} className="produto-item">
-                <h3 className="produto-nome">{produto.nome}</h3> 
+                <h3 className="produto-nome">{produto.nome}</h3>
                 <div className='container-imagem'>
                   <img src={produto.imagem} alt="Imagem do produto" />
                 </div>
@@ -87,8 +89,8 @@ function App() {
                 <p className="produto-proporcaotela">{produto.proporcaotela}</p>
                 <p className="produto-frequenciatela">{produto.frequenciatela}</p>
                 <button className="botao-comprar">Comprar</button>
-                <button className="botao-excluir" onClick={() => handleExcluir(produto.id)}>Excluir</button>
-                <Link  className="botao-alterar" to={`/alterar-produto/${produto.id}`}>Alterar</Link>
+                <button className="botao-excluir" onClick={() => handleExcluirProduto(produto.id)}>Excluir</button>
+                <Link className="botao-alterar" to={`/alterar-produto/${produto.id}`}>Alterar</Link>
               </div>
             ))
           }
@@ -98,7 +100,7 @@ function App() {
       {/* Listagem de Usuários */}
       <div className="usuarios-container">
         <h1 className='titulo-usuario'>Usuários</h1>
-        <div className="usuarios-list"> {/* Adicionando wrapper */}
+        <div className="usuarios-list">
           {
             usuarios.map(usuario => (
               <div key={usuario.id} className="usuario-item">
@@ -106,10 +108,11 @@ function App() {
                 <p>Email: {usuario.email}</p>
                 <p>Criado em: {new Date(usuario.created_at).toLocaleDateString()}</p>
                 <p>Atualizado em: {new Date(usuario.updated_at).toLocaleDateString()}</p>
+                <button className="botao-excluir" onClick={() => handleExcluirUsuario(usuario.id)}>Excluir</button>
               </div>
             ))
           }
-        </div> {/* Fechando a div aqui */}
+        </div>
       </div>
     </>
   )

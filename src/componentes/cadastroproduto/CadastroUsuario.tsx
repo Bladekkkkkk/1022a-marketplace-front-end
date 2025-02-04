@@ -1,110 +1,222 @@
-import {  ChangeEvent, FormEvent, useState } from "react"
-import { useNavigate } from 'react-router-dom';
+import { FormEvent, useState, ChangeEvent } from "react";
+import { useNavigate } from "react-router-dom";
 
+function CadastroUsuario() {
+    const navigate = useNavigate();
+    const [nome, setNome] = useState("");
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+    const [confirmarsenha, setConfirmarsenha] = useState("");
+    const [datanascimento, setDatanascimento] = useState("");
+    const [telefone, setTelefone] = useState("");
+    const [endereco, setEndereco] = useState("");
+    const [termosAceitos, setTermosAceitos] = useState(false);
 
-function CadastroProduto(){
-    const navigate = useNavigate()
-    const [nome, setNome] = useState("")
-    const [marca, setMarca] = useState("")
-    const [tamanhotela, setTamanhotela] = useState("")
-    const [resolucaotela, setResolucaotela] = useState("")
-    const [proporcaotela, setProporcaotela] = useState("")
-    const [frequenciatela, setFrequenciatela] = useState("")
-    const [imagem, setImagem] = useState("")
-    async function handleForm(event: FormEvent){
-        event.preventDefault()
+    // Funções de manipulação do estado
+    function handleNome(event: ChangeEvent<HTMLInputElement>) {
+        setNome(event.target.value);
+    }
+
+    function handleEmail(event: ChangeEvent<HTMLInputElement>) {
+        setEmail(event.target.value);
+    }
+
+    function handleSenha(event: ChangeEvent<HTMLInputElement>) {
+        setSenha(event.target.value);
+    }
+
+    function handleConfirmarsenha(event: ChangeEvent<HTMLInputElement>) {
+        setConfirmarsenha(event.target.value);
+    }
+
+    function handleDatanascimento(event: ChangeEvent<HTMLInputElement>) {
+        setDatanascimento(event.target.value);
+    }
+
+    function handleTelefone(event: ChangeEvent<HTMLInputElement>) {
+        setTelefone(event.target.value);
+    }
+
+    function handleEndereco(event: ChangeEvent<HTMLInputElement>) {
+        setEndereco(event.target.value);
+    }
+
+    function handleTermosAceitos(event: ChangeEvent<HTMLInputElement>) {
+        setTermosAceitos(event.target.checked);
+    }
+
+    async function handleForm(event: FormEvent) {
+        event.preventDefault();
+
+        if (!senha || !confirmarsenha) {
+            alert("As senhas não podem estar vazias!");
+            return;
+        }
+
+        if (senha !== confirmarsenha) {
+            alert("As senhas não coincidem!");
+            return;
+        }
+
+        if (!termosAceitos) {
+            alert("Você precisa aceitar os termos e condições.");
+            return;
+        }
+
+        // Validação do formato de email
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!emailPattern.test(email)) {
+            alert("Por favor, insira um email válido.");
+            return;
+        }
+
         try {
             const resposta = await fetch("https://one022a-marketplace-18yz.onrender.com/usuarios", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    nome: nome,
-                    marca: marca,
-                    tamanhotela: tamanhotela,
-                    resolucaotela: resolucaotela,
-                    proporcaotela: proporcaotela,
-                    frequenciatela: frequenciatela,
-                    imagem: imagem
-                })
-            })
-            if(resposta.status!=500){
-                alert("Produto Cadastro com Sucesso")
-                navigate("/")
-            }
-            else{
-                const mensagem = await resposta.text()
-                alert("Erro ao Cadastrar Produto - Error: "+mensagem)
-            }
-        }
-        catch(e){
-            alert("Servidor não está respondendo.")
-        }
-        
-    }
-    function handleNome(event: ChangeEvent<HTMLInputElement>) {
-        setNome(event.target.value)
-    }
-    function handleMarca(event: ChangeEvent<HTMLInputElement>) {
-        setMarca(event.target.value)
-    }
-    function handleTamanhotela(event: ChangeEvent<HTMLInputElement>) {
-        setTamanhotela(event.target.value)
-    }
-    function handleResolucaotela(event: ChangeEvent<HTMLInputElement>) {
-        setResolucaotela(event.target.value)
-    }
-    function handleProporcaotela(event: ChangeEvent<HTMLInputElement>) {
-        setProporcaotela(event.target.value)
-    }
-    function handleFrequenciatela(event: ChangeEvent<HTMLInputElement>) {
-        setFrequenciatela(event.target.value)
-    }
-    function handleImagem(event: ChangeEvent<HTMLInputElement>) {
-        setImagem(event.target.value)
-    }
-    return(
-        <>
+                    nome,
+                    email,
+                    senha,
+                    confirmarsenha,
+                    datanascimento,
+                    telefone,
+                    endereco,
+                }),
+            });
 
-      
-      <div className="container">
-      <h1>Cadastro de Produtos</h1>
-      <form onSubmit={handleForm}>
-    <div className="input-group">
-        <label htmlFor="nome">Nome</label>
-        <input placeholder="Nome" type="text" name="nome" id="nome" onChange={handleNome} />
-    </div>
-    <div className="input-group">
-        <label htmlFor="marca">Marca</label>
-        <input placeholder="Marca" type="text" name="marca" id="marca" onChange={handleMarca} />
-    </div>
-    <div className="input-group">
-        <label htmlFor="tamanhotela">Tamanho</label>
-        <input placeholder="Tamanho" type="text" name="tamanhotela" id="tamanhotela" onChange={handleTamanhotela} />
-    </div>
-    <div className="input-group">
-        <label htmlFor="resolucaotela">Resolução</label>
-        <input placeholder="Resolução" type="text" name="resolucaotela" id="resolucaotela" onChange={handleResolucaotela} />
-    </div>
-    <div className="input-group">
-        <label htmlFor="proporcaotela">Proporção</label>
-        <input placeholder="Proporção" type="text" name="proporcaotela" id="proporcaotela" onChange={handleProporcaotela} />
-    </div>
-    <div className="input-group">
-        <label htmlFor="frequenciatela">Frequência</label>
-        <input placeholder="Frequência" type="text" name="frequenciatela" id="frequenciatela" onChange={handleFrequenciatela} />
-    </div>
-    <div className="input-group">
-        <label htmlFor="imagem">URL Imagem</label>
-        <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" onChange={handleImagem} />
-    </div>
-    <input type="submit" value="Cadastrar" className="submit-btn" />
-    </form>
-    
-    </div>
+            if (resposta.ok) {
+                alert("Usuário Cadastrado com Sucesso");
+                navigate("/usuarios");
+            } else {
+                const mensagem = await resposta.text();
+                alert(`Erro ao Cadastrar Usuário - Error: ${mensagem}`);
+            }
+        } catch (e) {
+            alert("Servidor não está respondendo.");
+        }
+    }
+
+    return (
+        <>
+            <main className="container-usuarios">
+                <h1>Criar Conta</h1>
+                <div className="signup">
+                    <form onSubmit={handleForm} className="form-cadastro">
+                        <div className="input-group">
+                            <label htmlFor="nome">Nome</label>
+                            <input
+                                placeholder="Nome"
+                                type="text"
+                                name="nome"
+                                id="nome"
+                                value={nome}
+                                onChange={handleNome}
+                                required
+                            />
+                        </div>
+
+                        <div className="input-group">
+                            <label htmlFor="email">Email</label>
+                            <input
+                                placeholder="Email"
+                                type="email"
+                                name="email"
+                                id="email"
+                                value={email}
+                                onChange={handleEmail}
+                                required
+                            />
+                        </div>
+
+                        <div className="input-group">
+                            <label htmlFor="senha">Senha</label>
+                            <input
+                                placeholder="Senha"
+                                type="password"
+                                name="senha"
+                                id="senha"
+                                value={senha}
+                                onChange={handleSenha}
+                                required
+                            />
+                        </div>
+
+                        <div className="input-group">
+                            <label htmlFor="confirmarsenha">Confirmar Senha</label>
+                            <input
+                                placeholder="Confirmar Senha"
+                                type="password"
+                                name="confirmarsenha"
+                                id="confirmarsenha"
+                                value={confirmarsenha}
+                                onChange={handleConfirmarsenha}
+                                required
+                            />
+                        </div>
+
+                        <div className="input-group">
+                            <label htmlFor="datanascimento">Data de Nascimento</label>
+                            <input
+                                placeholder="Data de Nascimento"
+                                type="date"
+                                name="datanascimento"
+                                id="datanascimento"
+                                value={datanascimento}
+                                onChange={handleDatanascimento}
+                                required
+                            />
+                        </div>
+
+                        <div className="input-group">
+                            <label htmlFor="telefone">Telefone</label>
+                            <input
+                                placeholder="Telefone (XX) X XXXX-XXXX"
+                                type="tel"
+                                name="telefone"
+                                id="telefone"
+                                value={telefone}
+                                onChange={handleTelefone}
+                                required
+                            />
+                        </div>
+
+                        <div className="input-group">
+                            <label htmlFor="endereco">Endereço</label>
+                            <input
+                                placeholder="Endereço"
+                                type="text"
+                                name="endereco"
+                                id="endereco"
+                                value={endereco}
+                                onChange={handleEndereco}
+                                required
+                            />
+                        </div>
+
+                        <div className="terms">
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="terms"
+                                    required
+                                    checked={termosAceitos}
+                                    onChange={handleTermosAceitos}
+                                />
+                                Aceito os <a href="#">termos de serviço</a> e a <a href="#">política de privacidade</a>.
+                            </label>
+                        </div>
+
+                        <button type="submit" className="submit-btn" disabled={!termosAceitos}>
+                            Cadastrar
+                        </button>
+                    </form>
+                </div>
+            </main>
         </>
-    )
+    );
 }
 
-export default CadastroProduto
+export default CadastroUsuario;

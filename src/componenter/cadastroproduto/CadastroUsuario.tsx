@@ -10,6 +10,7 @@ function CadastroUsuario() {
     const [datanascimento, setDatanascimento] = useState("");
     const [telefone, setTelefone] = useState("");
     const [endereco, setEndereco] = useState("");
+    const [termosAceitos, setTermosAceitos] = useState(false);
 
     // Funções de manipulação do estado
     function handleNome(event: ChangeEvent<HTMLInputElement>) {
@@ -40,14 +41,32 @@ function CadastroUsuario() {
         setEndereco(event.target.value);
     }
 
+    function handleTermosAceitos(event: ChangeEvent<HTMLInputElement>) {
+        setTermosAceitos(event.target.checked);
+    }
+
     async function handleForm(event: FormEvent) {
         event.preventDefault();
+
         if (!senha || !confirmarsenha) {
             alert("As senhas não podem estar vazias!");
             return;
         }
+
         if (senha !== confirmarsenha) {
             alert("As senhas não coincidem!");
+            return;
+        }
+
+        if (!termosAceitos) {
+            alert("Você precisa aceitar os termos e condições.");
+            return;
+        }
+
+        // Validação do formato de email
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!emailPattern.test(email)) {
+            alert("Por favor, insira um email válido.");
             return;
         }
 
@@ -68,7 +87,7 @@ function CadastroUsuario() {
                 }),
             });
 
-            if (resposta.status !== 500) {
+            if (resposta.ok) {
                 alert("Usuário Cadastrado com Sucesso");
                 navigate("/usuarios");
             } else {
@@ -93,24 +112,16 @@ function CadastroUsuario() {
                 </div>
 
                 <div className="header-actions">
-                    <button
-                        className="produto-button"
-                        onClick={() => navigate("/produtos")}>
+                    <button className="produto-button" onClick={() => navigate("/produtos")}>
                         Produtos
                     </button>
-                    <button
-                        className="usuario-button"
-                        onClick={() => navigate("/usuarios")}>
+                    <button className="usuario-button" onClick={() => navigate("/usuarios")}>
                         Usuários
                     </button>
-                    <button
-                        className="cadastroproduto-button"
-                        onClick={() => navigate("/cadastro-produto")}>
+                    <button className="cadastroproduto-button" onClick={() => navigate("/cadastro-produto")}>
                         Cadastrar Produtos
                     </button>
-                    <button
-                        className="login-button"
-                        onClick={() => navigate("/cadastro-usuario")}>
+                    <button className="login-button" onClick={() => navigate("/cadastro-usuario")}>
                         Cadastrar-se
                     </button>
 
@@ -126,7 +137,6 @@ function CadastroUsuario() {
                 <h1>Criar Conta</h1>
                 <div className="signup">
                     <form onSubmit={handleForm} className="form-cadastro">
-
                         <div className="input-group">
                             <label htmlFor="nome">Nome</label>
                             <input
@@ -224,15 +234,16 @@ function CadastroUsuario() {
                                     type="checkbox"
                                     name="terms"
                                     required
-                                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                                        console.log(e.target.checked);
-                                    }}
+                                    checked={termosAceitos}
+                                    onChange={handleTermosAceitos}
                                 />
                                 Aceito os <a href="#">termos de serviço</a> e a <a href="#">política de privacidade</a>.
                             </label>
                         </div>
 
-                        <button type="submit" className="submit-btn">Cadastrar</button>
+                        <button type="submit" className="submit-btn" disabled={!termosAceitos}>
+                            Cadastrar
+                        </button>
                     </form>
                 </div>
             </main>

@@ -7,35 +7,48 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import CadastroProduto from './componentes/cadastroproduto/CadastroProduto.tsx';
-import AlterarProduto from './componentes/alterarusuario.tsx/AlterarProduto.tsx';
-import AlterarUsuario from './componentes/alterarusuario.tsx/AlterarUsuario.tsx';
+import AlterarProduto from './componentes/alterarusuario.tsx/AlterarProduto.tsx';  // Corrigido caminho
+import AlterarUsuario from './componentes/alterarusuario.tsx/AlterarUsuario.tsx';  // Corrigido caminho
+import CadastroUsuario from './componentes/cadastroproduto/CadastroUsuario.tsx'; // Importando CadastroUsuario
 import Header from './componentes/header/Header.tsx';
+
+// Layout Comum para o Header
+const Layout = ({ children }: { children: React.ReactNode }) => (
+  <>
+    <Header />
+    {children}
+  </>
+);
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <><Header/><App/></>,
+    element: <Layout><App /></Layout>,
   },
   {
     path: "/produtos",
-    element: <><Header/>< App/></>,
+    element: <Layout><App /></Layout>,
   },
   {
     path: "/cadastro-produto",
-    element: <><Header/><CadastroProduto/></>,
+    element: <Layout><CadastroProduto /></Layout>,
   },
   {
     path: "/usuarios",
-    element: <><Header/>< App/></>,
+    element: <Layout><App /></Layout>,
   },
   {
     path: "/alterar-produto/:id",
-    element: <><Header/><AlterarProduto/></>,
+    element: <Layout><AlterarProduto /></Layout>,
   },
   {
     path: "/alterar-usuario/:id",
-    element: <><Header/><AlterarUsuario/></>,
+    element: <Layout><AlterarUsuario /></Layout>,
+  },
+  {
+    path: "/cadastro-usuario", // Nova rota para Cadastro de Usuário
+    element: <Layout><CadastroUsuario /></Layout>,
   }
-  
 ]);
 
 createRoot(document.getElementById('root')!).render(
