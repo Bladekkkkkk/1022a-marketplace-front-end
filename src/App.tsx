@@ -55,21 +55,6 @@ function App() {
       })
   }
 
-  // Função para excluir um usuário
-  function handleExcluirUsuario(id: number) {
-    fetch(`https://one022a-marketplace-18yz.onrender.com/usuarios/${id}`, {
-      method: 'DELETE'
-    })
-      .then(resposta => {
-        if (resposta.status === 200) {
-          alert("Usuário excluído com sucesso")
-          setUsuarios(usuarios.filter(usuario => usuario.id !== id)) // Atualiza a lista de usuários
-        } else {
-          alert("Erro ao excluir o usuário: Confira o terminal do backend")
-        }
-      })
-  }
-
   return (
     <>
       {/* Listagem de Produtos */}
@@ -108,7 +93,6 @@ function App() {
                 <p>Email: {usuario.email}</p>
                 <p>Criado em: {new Date(usuario.created_at).toLocaleDateString()}</p>
                 <p>Atualizado em: {new Date(usuario.updated_at).toLocaleDateString()}</p>
-                <button className="botao-excluir" onClick={() => handleExcluirUsuario(usuario.id)}>Excluir</button>
               </div>
             ))
           }

@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
+import App2 from './App2.tsx'
 import './index.css'
 import {
   createBrowserRouter,
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/usuarios",
-    element: <Layout><App /></Layout>,
+    element: <Layout><App2 /></Layout>,
   },
   {
     path: "/alterar-produto/:id",

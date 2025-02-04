@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import './App.css'
+import { Link } from 'react-router-dom'
 
 // Tipo para usuários
 type UsuarioType = {
@@ -15,7 +15,6 @@ type UsuarioType = {
 }
 
 function Appi() {
-  const navigate = useNavigate()
   const [usuarios, setUsuarios] = useState<UsuarioType[]>([])
 
   // useEffect para carregar usuários
@@ -25,48 +24,22 @@ function Appi() {
       .then(resposta => resposta.json())
       .then(dados => setUsuarios(dados))
   }, [])
+  function handleExcluirUsuario(id: number) {
+    fetch(`https://one022a-marketplace-18yz.onrender.com/usuarios/${id}`, {
+      method: 'DELETE'
+    })
+      .then(resposta => {
+        if (resposta.status === 200) {
+          alert("Usuário excluído com sucesso")
+          setUsuarios(usuarios.filter(usuario => usuario.id !== id)) // Atualiza a lista de usuários
+        } else {
+          alert("Erro ao excluir o usuário: Confira o terminal do backend")
+        }
+      })
+  }
 
   return (
     <>
-      <header className="site-header">
-        <div className="logo">
-          <img src="logo.png" alt="Logo" />
-        </div>
-
-        <div className="search-bar">
-          <input type="text" placeholder="Busque aqui" />
-          <button className="search-button">➤</button>
-        </div>
-
-        <div className="header-actions">
-          <button
-            className="produto-button"
-            onClick={() => navigate("/produtos")}>
-            Produtos
-          </button>
-          <button
-            className="usuario-button"
-            onClick={() => navigate("/usuarios")}>
-            Usuários
-          </button>
-          <button
-            className="cadastroproduto-button"
-            onClick={() => navigate("/cadastro-produto")}>
-            Cadastrar Produtos
-          </button>
-          <button
-            className="login-button"
-            onClick={() => navigate("/cadastro-usuario")}>
-            Cadastrar-se
-          </button>
-          
-          <div className="icons">
-            <a href="#" className="icon">🔍</a>
-            <a href="#" className="icon">🛒</a>
-            <a href="#" className="icon">❤️</a>
-          </div>
-        </div>
-      </header>
 
       {/* Listagem de Usuários */}
       <div className="usuarios-container">
@@ -80,6 +53,8 @@ function Appi() {
                 <p className="usuario-datanascimento">Data de Nascimento: {usuario.datanascimento}</p>
                 <p className="usuario-telefone">Telefone: {usuario.telefone}</p>
                 <p className="usuario-endereco">Endereço: {usuario.endereco}</p>
+                <button className="botao-excluir" onClick={() => handleExcluirUsuario(usuario.id)}>Excluir</button>
+                <Link className="botao-alterar" to={`/alterar-usuario/${usuario.id}`}>Alterar</Link>
               </div>
             ))
           }
