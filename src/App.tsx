@@ -96,24 +96,6 @@ function App() {
           }
         </div>
       </div>
-
-      {/* Listagem de Usuários */}
-      <div className="usuarios-container">
-        <h1 className='titulo-usuario'>Usuários</h1>
-        <div className="usuarios-list">
-          {
-            usuarios.map(usuario => (
-              <div key={usuario.id} className="usuario-item">
-                <h1 className="usuario-nome">{usuario.name}</h1>
-                <p>Email: {usuario.email}</p>
-                <p>Criado em: {new Date(usuario.created_at).toLocaleDateString()}</p>
-                <p>Atualizado em: {new Date(usuario.updated_at).toLocaleDateString()}</p>
-                <button className="botao-excluir" onClick={() => handleExcluirUsuario(usuario.id)}>Excluir</button>
-              </div>
-            ))
-          }
-        </div>
-      </div>
     </>
   )
 }
