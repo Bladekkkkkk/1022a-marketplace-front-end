@@ -40,7 +40,6 @@ function Appi() {
 
   return (
     <>
-
       {/* Listagem de Usuários */}
       <div className="usuarios-container">
         <h1 className='titulo-usuario'>Usuários</h1>
