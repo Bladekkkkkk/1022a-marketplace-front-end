@@ -248,6 +248,8 @@
   cursor: pointer;
   transition: background-color 0.2s;
   text-align: center;
+  display: block;
+  box-sizing: border-box;
 }
 
 .botao-excluir:hover {
