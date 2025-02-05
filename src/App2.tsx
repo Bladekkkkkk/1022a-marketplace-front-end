@@ -53,7 +53,7 @@ function Appi() {
                 <p className="usuario-telefone">Telefone: {usuario.telefone}</p>
                 <p className="usuario-endereco">Endereço: {usuario.endereco}</p>
                 <button className="botao-excluir" onClick={() => handleExcluirUsuario(usuario.id)}>Excluir</button>
-                <Link className="botao-alterar" to={`/alterar-usuario/${usuario.id}`}>Alterar</Link>
+                <Link className="botao-excluir" to={`/alterar-usuario/${usuario.id}`}>Alterar</Link>
               </div>
             ))
           }
