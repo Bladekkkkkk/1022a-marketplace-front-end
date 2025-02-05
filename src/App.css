@@ -256,7 +256,7 @@
 
 .botao-alterar{
   margin-top: 1%;
-  width: 91.7%;
+  width: 100%;
   padding: 0.8rem;
   background-color: #020202;
   color: #fff;
@@ -266,6 +266,8 @@
   cursor: pointer;
   transition: background-color 0.2s;
   text-align: center;
+  box-sizing: border-box;
+  display: block;
 }
 
 .botao-alterar:hover {
